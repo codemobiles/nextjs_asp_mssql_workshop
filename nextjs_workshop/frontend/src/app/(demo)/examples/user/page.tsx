@@ -1,3 +1,5 @@
+"use client";
+
 type User = { username: string; password: string };
 
 // http://localhost:3000/examples/user
