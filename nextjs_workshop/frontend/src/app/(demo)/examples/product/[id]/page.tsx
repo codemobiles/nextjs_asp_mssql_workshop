@@ -12,4 +12,3 @@ export default function Product({ params, searchParams }: Props) {
     </div>
   );
 }
-
