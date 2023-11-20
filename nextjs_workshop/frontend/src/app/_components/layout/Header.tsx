@@ -73,8 +73,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 type Props = {
   open: boolean;
+  handleDrawerOpen: () => void;
 };
-export default function Header({ open }: Props) {
+export default function Header({ open, handleDrawerOpen }: Props) {
   const theme = useTheme();
 
   return (
