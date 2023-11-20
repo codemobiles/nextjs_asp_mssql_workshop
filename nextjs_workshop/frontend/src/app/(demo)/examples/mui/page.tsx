@@ -1,22 +1,17 @@
+import { Stack, Button } from "@mui/material";
 import React from "react";
 
 type Props = {};
 
 export default function MuiPage({}: Props) {
   return (
-    <div className="text-red-400 bg-yellow-500 w-[100px] m-3 text-center rounded-md">
-      MuiPage
+    <div>
+      <BasicButtons />
     </div>
   );
 }
 
-
-
-import * as React from "react";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-
-export default function BasicButtons() {
+function BasicButtons() {
   return (
     <Stack spacing={2} direction="row">
       <Button variant="text">Text</Button>
