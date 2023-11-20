@@ -71,17 +71,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function SideBar() {
+type Props = {
+  open: boolean;
+  handleDrawerClose: () => void;
+};
+export default function SideBar({ open, handleDrawerClose }: Props) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
 
   return (
     <Drawer
