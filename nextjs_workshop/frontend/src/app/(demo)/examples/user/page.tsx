@@ -1,7 +1,7 @@
-import React from "react";
+export default function Hey1() {
+  return <div>Hey1</div>;
+}
 
-type Props = {};
-
-export default function UserPage({}: Props) {
-  return <div>UserPage</div>;
+export function Hey2() {
+  return <div>Hey</div>;
 }
