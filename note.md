@@ -4,4 +4,4 @@
 
 # Install tools
 
-- install nvm: https://github.com/coreybutler/nvm-windows/releases
+- install nvm: https://www.freecodecamp.org/news/node-version-manager-nvm-install-guide/
