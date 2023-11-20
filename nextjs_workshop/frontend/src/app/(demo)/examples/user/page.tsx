@@ -1,8 +1,24 @@
-// localhost:3000/examples/user
-http: export default function Hey1() {
-  return <div>Hey1</div>;
-}
+type User = { username: string; password: string };
 
-export function Hey2() {
-  return <div>Hey</div>;
+// http://localhost:3000/examples/user
+export default function Hey1() {
+  // Implicit
+  const tmp1 = 0;
+  const tmp2 = "lek";
+  const tmp3 = true;
+  const tmp5 = { username: "admin", password: "1234" };
+
+  // Explicit
+  const tmp6: number = 0;
+  const tmp7: string = "codemobiles";
+  const tmp8: boolean = true;
+  const tmp9: any = { username: "admin", password: "1234" };
+
+  const tmp10: User = {
+    username: "admin",
+    password: "1234",
+  };
+
+  // JSX
+  return <div>{Date.now()}Hey1</div>;
 }
