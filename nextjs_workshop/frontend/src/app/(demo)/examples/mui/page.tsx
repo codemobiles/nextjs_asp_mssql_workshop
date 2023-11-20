@@ -11,12 +11,13 @@ export default function MuiPage({}: Props) {
   );
 }
 
-function BasicButtons() {
+type BasicButtonsProps = {
+  lable: string;
+};
+function BasicButtons(props: BasicButtonsProps) {
   return (
     <Stack spacing={2} direction="row">
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
+      <Button variant="contained">{props.lable}</Button>
     </Stack>
   );
 }
