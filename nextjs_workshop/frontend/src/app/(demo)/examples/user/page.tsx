@@ -19,6 +19,19 @@ export default function Hey1() {
     password: "1234",
   };
 
+  const method1 = () => {
+    alert("Hey");
+  };
+
   // JSX
-  return <div>{Date.now()}Hey1</div>;
+  return (
+    <div>
+      <ul>
+        <li>- {JSON.stringify(tmp5)}</li>
+        <li>
+          - <button onClick={() => method1()}>ClikeMe</button>
+        </li>
+      </ul>
+    </div>
+  );
 }
