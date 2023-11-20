@@ -1,4 +1,5 @@
-export default function Hey1() {
+// localhost:3000/examples/user
+http: export default function Hey1() {
   return <div>Hey1</div>;
 }
 
