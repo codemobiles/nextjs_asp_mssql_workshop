@@ -6,5 +6,13 @@ type Props = {
 };
 
 export default function User({ params }: Props) {
-  return <div>{JSON.stringify(params.slug)}</div>;
+  return (
+    <div>
+      <ul>
+        {params.slug.map((e) => (
+          <li key={e}>{e}</li>
+        ))}
+      </ul>
+    </div>
+  );
 }
