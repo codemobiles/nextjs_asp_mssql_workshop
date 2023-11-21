@@ -103,6 +103,24 @@ export default function SideBar({ open, handleDrawerClose }: Props) {
       </DrawerHeader>
       <Divider />
       <List>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <MailIcon />
+            </ListItemIcon>
+            <ListItemText primary="Login" />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <MailIcon />
+            </ListItemIcon>
+            <ListItemText primary="Register" />
+          </ListItemButton>
+        </ListItem>
+
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
