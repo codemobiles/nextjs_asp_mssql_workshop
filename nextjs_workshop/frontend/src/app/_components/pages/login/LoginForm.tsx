@@ -17,6 +17,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import { store } from "@/store/store";
 
 interface User {
   username: string;
@@ -42,9 +43,7 @@ export default function LoginForm() {
 
   const showForm = () => {
     return (
-      <form onSubmit={handleSubmit(async (value: User) => {
-        
-      })}>
+      <form onSubmit={handleSubmit(async (value: User) => {})}>
         {/* Username */}
         <Controller
           name="username"
@@ -105,7 +104,7 @@ export default function LoginForm() {
           variant="contained"
           color="primary"
         >
-          Login
+          Login ({store.getState().userSlice.count})
         </Button>
 
         <Button
