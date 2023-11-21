@@ -104,23 +104,26 @@ export default function SideBar({ open, handleDrawerClose }: Props) {
       <Divider />
       <List>
         {/* begin */}
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <MailIcon />
-            </ListItemIcon>
-            <ListItemText primary="Login" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <MailIcon />
-            </ListItemIcon>
-            <ListItemText primary="Register" />
-          </ListItemButton>
-        </ListItem>
+        <a href="/login">
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <MailIcon />
+              </ListItemIcon>
+              <ListItemText primary="Login" />
+            </ListItemButton>
+          </ListItem>
+        </a>
+        <a href="/register">
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <MailIcon />
+              </ListItemIcon>
+              <ListItemText primary="Register" />
+            </ListItemButton>
+          </ListItem>
+        </a>
 
         <Divider />
         {/* end */}
