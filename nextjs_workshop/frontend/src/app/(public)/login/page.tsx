@@ -13,6 +13,11 @@ type User = {
   type?: string;
 };
 
+const defaultValues: User = {
+  username: "",
+  password: "",
+};
+
 export default function LoginPage({}: Props) {
   const formValidateSchema = Yup.object().shape({
     username: Yup.string().required("Username is required").trim(),
@@ -20,10 +25,7 @@ export default function LoginPage({}: Props) {
   });
 
   const { control, handleSubmit } = useForm<User>({
-    defaultValues: {
-      username: "",
-      password: "",
-    },
+    defaultValues,
     resolver: yupResolver(formValidateSchema),
   });
 
