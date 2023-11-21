@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {};
 
@@ -10,7 +10,9 @@ type User = {
 };
 
 export default function LoginPage({}: Props) {
-  let user: User = { username: "", password: "" };
+  // let user: User = { username: "", password: "" }; // non-side-effect
+  const [user, setUser] = useState({ username: "", password: "" });
+
 
   return (
     <div>
