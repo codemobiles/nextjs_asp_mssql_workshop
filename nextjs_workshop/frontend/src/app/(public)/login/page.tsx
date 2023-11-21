@@ -53,7 +53,9 @@ export default function LoginPage({}: Props) {
         />
         <br />
 
-        <Button variant="contained">Submit</Button>
+        <Button type="submit" variant="contained">
+          Submit
+        </Button>
       </form>
     </div>
   );
