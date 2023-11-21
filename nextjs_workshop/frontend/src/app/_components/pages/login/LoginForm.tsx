@@ -8,7 +8,9 @@ import {
   CardContent,
   CardMedia,
   InputAdornment,
+  Stack,
   TextField,
+  Typography,
 } from "@mui/material";
 import * as Icons from "@mui/icons-material/";
 import React from "react";
@@ -118,6 +120,32 @@ export default function LoginForm() {
         >
           Register
         </Button>
+
+        <Stack direction="row" sx={{ mt: 4 }}>
+          <Button
+            onClick={() => {
+              router.push("/register");
+            }}
+            type="button"
+            fullWidth
+            variant="outlined"
+          >
+            -
+          </Button>
+
+          <Typography variant="h5">0</Typography>
+
+          <Button
+            onClick={() => {
+              router.push("/register");
+            }}
+            type="button"
+            fullWidth
+            variant="outlined"
+          >
+            +
+          </Button>
+        </Stack>
       </form>
     );
   };
