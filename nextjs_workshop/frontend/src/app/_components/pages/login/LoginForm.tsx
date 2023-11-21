@@ -18,7 +18,7 @@ import { Controller, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { store } from "@/store/store";
 
 interface User {
@@ -27,6 +27,9 @@ interface User {
 }
 
 export default function LoginForm() {
+  const userReducer = useSelector((state: any) => state.userReducer);
+  const dispatch = useDispatch();
+  
   const router = useRouter();
   const initialValue: User = { username: "admin", password: "" };
   const formValidateSchema = Yup.object().shape({
