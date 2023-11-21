@@ -23,7 +23,7 @@ interface User {
   password: string;
 }
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const router = useRouter();
   const initialValue: User = { username: "admin", password: "" };
   const formValidateSchema = Yup.object().shape({
@@ -103,19 +103,19 @@ export default function LoginForm() {
           variant="contained"
           color="primary"
         >
-          Login
+          Create
         </Button>
 
         <Button
           className="mt-4"
           onClick={() => {
-            router.push("/register");
+            router.push("/login");
           }}
           type="button"
           fullWidth
           variant="outlined"
         >
-          Register
+          Cancel
         </Button>
       </form>
     );
@@ -126,7 +126,7 @@ export default function LoginForm() {
       <Card className="max-w-[345px] mt-[100px]">
         <CardMedia
           sx={{ height: 200 }}
-          image="/static/img/next_login.jpg"
+          image="/static/img/next_register.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
