@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 // POST
 export async function POST(
@@ -12,6 +12,10 @@ export async function POST(
   const route = context.params.route;
   const body = await request.json();
   if (route === "signin") {
-    return signin(body);
+    return NextResponse.json({
+      result: "ok",
+      message: "login successfully",
+      body,
+    });
   }
 }
