@@ -1,7 +1,9 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  children: React.ReactNode;
+};
 
-export default function ReduxProvider({}: Props) {
-  return <div>ReduxProvider</div>;
+export default function ReduxProvider({ children }: Props) {
+  return <div>{children}</div>;
 }
