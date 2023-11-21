@@ -1,5 +1,5 @@
 "use client";
-import { TextField } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 type Props = {};
@@ -19,7 +19,9 @@ export default function LoginPage({}: Props) {
 
   return (
     <div>
-      LoginPage
+      <Typography variant="h2" className="mb-5">
+        LoginPage{" "}
+      </Typography>
       <form
         onSubmit={() => {
           alert(JSON.stringify(user));
@@ -44,6 +46,7 @@ export default function LoginPage({}: Props) {
         />
         <br />
         <TextField
+          sx={{ mt: 3 }}
           variant="outlined"
           label="Password"
           value={user.password}
