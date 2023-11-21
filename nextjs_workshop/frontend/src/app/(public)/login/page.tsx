@@ -24,7 +24,11 @@ export default function LoginPage({}: Props) {
     password: Yup.string().required("Password is required").trim(),
   });
 
-  const { control, handleSubmit } = useForm<User>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
     defaultValues,
     resolver: yupResolver(formValidateSchema),
   });
@@ -44,7 +48,13 @@ export default function LoginPage({}: Props) {
           name="username"
           control={control}
           render={({ field }) => (
-            <TextField variant="outlined" label="Username" {...field} />
+            <TextField
+              error={Boolean(errors.username?.message)}
+              helperText={errors.username?.message}
+              variant="outlined"
+              label="Username"
+              {...field}
+            />
           )}
         />
         <br />
@@ -54,6 +64,8 @@ export default function LoginPage({}: Props) {
           control={control}
           render={({ field }) => (
             <TextField
+              error={Boolean(errors.password?.message)}
+              helperText={errors.password?.message}
               sx={{ mt: 3 }}
               variant="outlined"
               label="Password"
