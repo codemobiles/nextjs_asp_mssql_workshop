@@ -1,5 +1,5 @@
 "use client";
-import { TextField, Typography } from "@mui/material";
+import { Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 type Props = {};
@@ -20,22 +20,13 @@ export default function LoginPage({}: Props) {
   return (
     <div>
       <Typography variant="h2" className="mb-5">
-        LoginPage{" "}
+        LoginPage
       </Typography>
       <form
         onSubmit={() => {
           alert(JSON.stringify(user));
         }}
       >
-        {/* <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          value={user.username}
-          onChange={(e) => {
-            setUser({ ...user, username: e.target.value });
-          }}
-        /> */}
         <TextField
           variant="outlined"
           label="Username"
@@ -55,9 +46,10 @@ export default function LoginPage({}: Props) {
           }}
         />
         <br />
-        <span>#Spy{JSON.stringify(user)}</span>
-        <br />
-        <button>Submit</button>
+
+        <Button className="mt-9 w-[200px]" variant="contained">
+          Submit
+        </Button>
       </form>
     </div>
   );
