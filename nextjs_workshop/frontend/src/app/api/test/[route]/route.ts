@@ -9,5 +9,5 @@ export async function GET(
     };
   }
 ): Promise<any> {
-  return NextResponse.json({ result: "ok" });
+  return NextResponse.json({ result: "ok", route: context.params.route });
 }
