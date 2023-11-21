@@ -1,6 +1,7 @@
 "use client";
 import { Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 
 type Props = {};
 
@@ -11,10 +12,11 @@ type User = {
 };
 
 export default function LoginPage({}: Props) {
-  // let user: User = { username: "", password: "" }; // non-side-effect
-  const [user, setUser] = useState<User>({
-    username: "admin",
-    password: "555",
+  const { control, handleSubmit } = useForm<User>({
+    defaultValues: {
+      username: "",
+      password: "",
+    },
   });
 
   return (
@@ -22,11 +24,7 @@ export default function LoginPage({}: Props) {
       <Typography variant="h2" className="mb-5">
         LoginPage
       </Typography>
-      <form
-        onSubmit={() => {
-          alert(JSON.stringify(user));
-        }}
-      >
+      <form onSubmit={() => {}}>
         <TextField
           variant="outlined"
           label="Username"
