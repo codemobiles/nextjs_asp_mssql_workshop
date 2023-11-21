@@ -1,7 +1,7 @@
 "use client";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Box, CssBaseline, styled, useTheme } from "@mui/material";
 import React from "react";
 import Header from "../_components/layout/Header";
