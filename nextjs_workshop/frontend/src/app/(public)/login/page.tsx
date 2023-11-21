@@ -1,4 +1,5 @@
 "use client";
+import { TextField } from "@mui/material";
 import React, { useState } from "react";
 
 type Props = {};
@@ -24,7 +25,7 @@ export default function LoginPage({}: Props) {
           alert(JSON.stringify(user));
         }}
       >
-        <input
+        {/* <input
           type="text"
           name="username"
           placeholder="Username"
@@ -32,7 +33,11 @@ export default function LoginPage({}: Props) {
           onChange={(e) => {
             setUser({ ...user, username: e.target.value });
           }}
-        />
+        /> */}
+
+
+        <TextField />
+        
         <br />
         <input
           type="text"
