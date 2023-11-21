@@ -2,6 +2,7 @@
 import { Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import * as Yup from "yup";
 
 type Props = {};
 
@@ -17,6 +18,11 @@ export default function LoginPage({}: Props) {
       username: "",
       password: "",
     },
+  });
+
+  const formValidateSchema = Yup.object().shape({
+    username: Yup.string().required("Username is required").trim(),
+    password: Yup.string().required("Password is required").trim(),
   });
 
   return (
@@ -42,7 +48,7 @@ export default function LoginPage({}: Props) {
         <Controller
           name="password"
           control={control}
-          render={(field) => (
+          render={({ field }) => (
             <TextField
               sx={{ mt: 3 }}
               variant="outlined"
