@@ -10,8 +10,8 @@ const userSlice = createSlice({
       state.count--;
     },
   },
-  initialState: { count: 0 },
+  initialState: { count: 10 },
 });
 
 export default userSlice.reducer;
-export const {add, remove } = userSlice.actions
+export const { add, remove } = userSlice.actions;

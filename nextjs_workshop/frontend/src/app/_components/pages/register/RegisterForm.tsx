@@ -8,7 +8,9 @@ import {
   CardContent,
   CardMedia,
   InputAdornment,
+  Stack,
   TextField,
+  Typography,
 } from "@mui/material";
 import * as Icons from "@mui/icons-material/";
 import React from "react";
@@ -16,7 +18,8 @@ import { Controller, useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { remove, add } from "@/store/slices/userSlice";
 
 interface User {
   username: string;
@@ -30,6 +33,9 @@ export default function RegisterForm() {
     username: Yup.string().required("Username is required").trim(),
     password: Yup.string().required("Password is required").trim(),
   });
+
+  const userReducer = useSelector((state: any) => state.userReducer);
+  const dispatch = useDispatch();
 
   const {
     control,
@@ -117,6 +123,32 @@ export default function RegisterForm() {
         >
           Cancel
         </Button>
+
+        <Stack direction="row" sx={{ mt: 4 }}>
+          <Button
+            onClick={() => {
+              dispatch(remove());
+            }}
+            type="button"
+            fullWidth
+            variant="outlined"
+          >
+            -
+          </Button>
+
+          <Typography variant="h5">{userReducer.count}</Typography>
+
+          <Button
+            onClick={() => {
+              dispatch(add());
+            }}
+            type="button"
+            fullWidth
+            variant="outlined"
+          >
+            +
+          </Button>
+        </Stack>
       </form>
     );
   };

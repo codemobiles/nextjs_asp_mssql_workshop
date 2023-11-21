@@ -20,6 +20,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { store } from "@/store/store";
+import { add, remove } from "@/store/slices/userSlice";
 
 interface User {
   username: string;
@@ -29,7 +30,7 @@ interface User {
 export default function LoginForm() {
   const userReducer = useSelector((state: any) => state.userReducer);
   const dispatch = useDispatch();
-  
+
   const router = useRouter();
   const initialValue: User = { username: "admin", password: "" };
   const formValidateSchema = Yup.object().shape({
@@ -109,7 +110,7 @@ export default function LoginForm() {
           variant="contained"
           color="primary"
         >
-          Login ({store.getState().userSlice.count})
+          Login
         </Button>
 
         <Button
@@ -127,7 +128,7 @@ export default function LoginForm() {
         <Stack direction="row" sx={{ mt: 4 }}>
           <Button
             onClick={() => {
-              router.push("/register");
+              dispatch(remove());
             }}
             type="button"
             fullWidth
@@ -136,11 +137,11 @@ export default function LoginForm() {
             -
           </Button>
 
-          <Typography variant="h5">0</Typography>
+          <Typography variant="h5">{userReducer.count}</Typography>
 
           <Button
             onClick={() => {
-              router.push("/register");
+              dispatch(add());
             }}
             type="button"
             fullWidth
