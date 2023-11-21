@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Box, CssBaseline, useTheme } from "@mui/material";
+import { Main } from "next/document";
+import Header from "./_components/layout/Header";
+import SideBar from "./_components/layout/Sidebar";
+import React from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +19,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(true);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Box sx={{ display: "flex" }}>
+          <CssBaseline />
+          <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+          <SideBar open={open} handleDrawerClose={handleDrawerClose} />
+          <Main open={open}>
+            <DrawerHeader />
+          </Main>
+        </Box>
+      </body>
     </html>
   );
 }
