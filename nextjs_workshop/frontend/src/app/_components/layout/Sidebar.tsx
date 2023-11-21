@@ -103,7 +103,8 @@ export default function SideBar({ open, handleDrawerClose }: Props) {
       </DrawerHeader>
       <Divider />
       <List>
-        <ListItem>
+        {/* begin */}
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
               <MailIcon />
@@ -112,7 +113,7 @@ export default function SideBar({ open, handleDrawerClose }: Props) {
           </ListItemButton>
         </ListItem>
 
-        <ListItem>
+        <ListItem disablePadding>
           <ListItemButton>
             <ListItemIcon>
               <MailIcon />
@@ -120,6 +121,9 @@ export default function SideBar({ open, handleDrawerClose }: Props) {
             <ListItemText primary="Register" />
           </ListItemButton>
         </ListItem>
+
+        <Divider />
+        {/* end */}
 
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem key={text} disablePadding>
