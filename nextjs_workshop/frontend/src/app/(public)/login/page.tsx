@@ -17,14 +17,14 @@ export default function LoginPage({}: Props) {
       LoginPage
       <form
         onSubmit={() => {
-          alert("Hey");
+          alert(JSON.stringify(user));
         }}
       >
         <input
           type="text"
           name="username"
           placeholder="Username"
-          onChange={(e) => console.log(e.target.value)}
+          onChange={(e) => (user.username = e.target.value)}
         />
         <br />
         <input type="text" name="password" placeholder="Password" /> <br />
