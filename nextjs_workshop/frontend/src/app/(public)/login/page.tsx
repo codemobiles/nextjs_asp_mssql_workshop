@@ -11,8 +11,7 @@ type User = {
 
 export default function LoginPage({}: Props) {
   // let user: User = { username: "", password: "" }; // non-side-effect
-  const [user, setUser] = useState({ username: "", password: "" });
-
+  const [user, setUser] = useState<User>({ username: "", password: "" });
 
   return (
     <div>
@@ -26,7 +25,9 @@ export default function LoginPage({}: Props) {
           type="text"
           name="username"
           placeholder="Username"
-          onChange={(e) => (user.username = e.target.value)}
+          onChange={(e) => {
+            
+          }}
         />
         <br />
         <input type="text" name="password" placeholder="Password" /> <br />
