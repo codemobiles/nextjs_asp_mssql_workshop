@@ -25,23 +25,27 @@ export default function LoginPage({}: Props) {
         LoginPage
       </Typography>
       <form onSubmit={() => {}}>
-        <TextField
-          variant="outlined"
-          label="Username"
-          value={user.username}
-          onChange={(e) => {
-            setUser({ ...user, username: e.target.value });
-          }}
+        {/* Username */}
+        <Controller
+          name="username"
+          control={control}
+          render={({ field }) => (
+            <TextField variant="outlined" label="Username" {...field} />
+          )}
         />
         <br />
-        <TextField
-          sx={{ mt: 3 }}
-          variant="outlined"
-          label="Password"
-          value={user.password}
-          onChange={(e) => {
-            setUser({ ...user, password: e.target.value });
-          }}
+        {/* Password */}
+        <Controller
+          name="password"
+          control={control}
+          render={(field) => (
+            <TextField
+              sx={{ mt: 3 }}
+              variant="outlined"
+              label="Password"
+              {...field}
+            />
+          )}
         />
         <br />
 
