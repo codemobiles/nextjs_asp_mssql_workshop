@@ -24,7 +24,11 @@ export default function LoginPage({}: Props) {
       <Typography variant="h2" className="mb-5">
         LoginPage
       </Typography>
-      <form onSubmit={() => {}}>
+      <form
+        onSubmit={handleSubmit((values) => {
+          alert(JSON.stringify(values));
+        })}
+      >
         {/* Username */}
         <Controller
           name="username"
