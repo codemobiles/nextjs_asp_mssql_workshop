@@ -9,5 +9,6 @@ export async function GET(
     };
   }
 ): Promise<any> {
+  // http://localhost:3000/api/test/user
   return NextResponse.json({ result: "ok", route: context.params.route });
 }
