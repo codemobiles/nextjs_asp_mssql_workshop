@@ -6,7 +6,11 @@ export default function LoginPage({}: Props) {
   return (
     <div>
       LoginPage
-      <form action="">
+      <form
+        onSubmit={() => {
+          alert("Hey");
+        }}
+      >
         <input type="text" name="username" placeholder="Username" /> <br />
         <input type="text" name="password" placeholder="Password" /> <br />
         <button>Submit</button>
