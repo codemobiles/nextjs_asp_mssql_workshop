@@ -3,6 +3,7 @@ import { Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 type Props = {};
 
@@ -13,16 +14,17 @@ type User = {
 };
 
 export default function LoginPage({}: Props) {
+  const formValidateSchema = Yup.object().shape({
+    username: Yup.string().required("Username is required").trim(),
+    password: Yup.string().required("Password is required").trim(),
+  });
+
   const { control, handleSubmit } = useForm<User>({
     defaultValues: {
       username: "",
       password: "",
     },
-  });
-
-  const formValidateSchema = Yup.object().shape({
-    username: Yup.string().required("Username is required").trim(),
-    password: Yup.string().required("Password is required").trim(),
+    resolver: yupResolver(formValidateSchema),
   });
 
   return (
