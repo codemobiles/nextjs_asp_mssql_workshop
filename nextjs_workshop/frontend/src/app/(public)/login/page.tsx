@@ -34,20 +34,23 @@ export default function LoginPage({}: Props) {
             setUser({ ...user, username: e.target.value });
           }}
         /> */}
-
-
-        <TextField />
-        
+        <TextField
+          variant="outlined"
+          label="Username"
+          value={user.username}
+          onChange={(e) => {
+            setUser({ ...user, username: e.target.value });
+          }}
+        />
         <br />
-        <input
-          type="text"
-          name="password"
-          placeholder="Password"
+        <TextField
+          variant="outlined"
+          label="Password"
           value={user.password}
           onChange={(e) => {
             setUser({ ...user, password: e.target.value });
           }}
-        />{" "}
+        />
         <br />
         <span>#Spy{JSON.stringify(user)}</span>
         <br />
