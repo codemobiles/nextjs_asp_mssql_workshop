@@ -38,7 +38,7 @@ const theme = createTheme({
     fontWeightMedium: 500,
     fontWeightBold: 600,
   },
-  spacing: 8,
+  spacing: 4,
   palette: {
     mode: "light",
     primary:

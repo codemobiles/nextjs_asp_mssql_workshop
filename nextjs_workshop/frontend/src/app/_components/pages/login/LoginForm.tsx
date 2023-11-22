@@ -19,7 +19,13 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { add, addAsync, remove, resetAsync, userSelector } from "@/store/slices/userSlice";
+import {
+  add,
+  addAsync,
+  remove,
+  resetAsync,
+  userSelector,
+} from "@/store/slices/userSlice";
 
 interface User {
   username: string;
@@ -27,8 +33,6 @@ interface User {
 }
 
 export default function LoginForm() {
-
-  
   const userReducer = useSelector(userSelector);
   const dispatch = useDispatch();
 
@@ -105,7 +109,7 @@ export default function LoginForm() {
         />
 
         <Button
-          className="mt-8"
+          sx={{ mt: 3 }}
           type="submit"
           fullWidth
           variant="contained"

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import ReduxProvider from "./_components/common/ReduxProvider";
+import ThemeRegistry from "./_components/ThemeRegistry/ThemeRegistry";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <Provider store={store}>{children}</Provider> */}
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <ThemeRegistry>{children}</ThemeRegistry>
+        </ReduxProvider>
       </body>
     </html>
   );
