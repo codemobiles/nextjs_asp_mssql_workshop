@@ -91,7 +91,7 @@ export default function Header({ open, handleDrawerOpen }: Props) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Persistent drawer
+          Persistent drawer {process.env.NEXT_PUBLIC_APP_VERSION}
         </Typography>
       </Toolbar>
     </AppBar>
