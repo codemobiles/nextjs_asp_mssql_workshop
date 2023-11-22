@@ -16,11 +16,16 @@ namespace backend.Controllers
         }
 
         [HttpGet("")]
-        public ActionResult<IEnumerable<string>> GetProducts()
+        public IActionResult GetDefault()
         {
-            return new string[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+            return Ok(new string[] { "Freezing", "Bracing", });
         }
 
+        [HttpGet("products")]
+        public IActionResult GetProducts()
+        {
+            return Ok(new string[] { "Angular", "VueJS", });
+        }
 
 
     }
