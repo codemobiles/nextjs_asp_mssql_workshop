@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { UserData } from "@/models/user.model";
+import build from "next/dist/build";
 
 interface SignAction {
   username: string;
@@ -31,6 +32,11 @@ export const signIn = createAsyncThunk(
     });
 
     const result = await response.json();
+    if (!result.token) {
+      throw new Error("Invalid username or password");
+    }
+
+    return result;
   }
 );
 
@@ -47,7 +53,7 @@ interface UserState {
   status: "fetching" | "success" | "failed" | "init";
   isAuthenticated: boolean;
   isAuthenticating: boolean;
-  count: 0;
+  count: number;
   user?: UserData;
 }
 
@@ -70,12 +76,22 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    // Add
     builder.addCase(addAsync.fulfilled, (state, action) => {
       state.count = state.count + action.payload;
     });
 
+    // Reset
     builder.addCase(resetAsync.fulfilled, (state, action) => {
       state.count = action.payload;
+    });
+
+    // SignIn
+    builder.addCase(signIn.fulfilled, (state, action) => {
+      state.error = undefined;
+      state.isAuthenticated = true;
+      state.isAuthenticating = false;
+      state.status = "success";
     });
   },
   initialState,
