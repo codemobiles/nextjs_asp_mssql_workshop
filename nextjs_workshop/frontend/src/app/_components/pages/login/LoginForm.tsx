@@ -19,7 +19,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { add, addAsync, remove } from "@/store/slices/userSlice";
+import { add, addAsync, remove, resetAsync } from "@/store/slices/userSlice";
 
 interface User {
   username: string;
@@ -136,7 +136,9 @@ export default function LoginForm() {
             -
           </Button>
 
-          <Typography variant="h5">{userReducer.count}</Typography>
+          <Button variant="text" onClick={() => dispatch(resetAsync(-1))}>
+            <Typography variant="h5">{userReducer.count}</Typography>
+          </Button>
 
           <Button
             onClick={() => {
