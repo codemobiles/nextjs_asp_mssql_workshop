@@ -25,6 +25,7 @@ export const resetAsync = createAsyncThunk(
 export const signIn = createAsyncThunk(
   "user/signin",
   async (user: SignAction) => {
+    await new Promise((resolve) => setTimeout(resolve, 300));
     const response = await fetch("http://localhost:3000/api/auth/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
