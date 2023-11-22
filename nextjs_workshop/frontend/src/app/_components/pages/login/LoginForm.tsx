@@ -117,6 +117,10 @@ export default function LoginForm() {
           )}
         />
 
+        {userReducer.status == "failed" && (
+          <Alert severity="error">{userReducer.error}</Alert>
+        )}
+
         <Button
           sx={{ mt: 3 }}
           type="submit"
