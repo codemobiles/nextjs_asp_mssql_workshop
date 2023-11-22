@@ -1,6 +1,11 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
+interface SignAction {
+  username: string;
+  password: string;
+}
+
 export const addAsync = createAsyncThunk("user/addAsync", async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   return 2;
@@ -13,6 +18,8 @@ export const resetAsync = createAsyncThunk(
     return resetValue;
   }
 );
+
+export const signIn = (user: SignAction) => {};
 
 export const signOut = createAsyncThunk("user/signOut", async () => {});
 
