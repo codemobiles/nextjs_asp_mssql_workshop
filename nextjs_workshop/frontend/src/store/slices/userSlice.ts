@@ -19,7 +19,9 @@ export const resetAsync = createAsyncThunk(
   }
 );
 
-export const signIn = (user: SignAction) => {};
+export const signIn = createAsyncThunk("user/signin", (user: SignAction) => {
+  alert(JSON.stringify(user));
+});
 
 export const signOut = createAsyncThunk("user/signOut", async () => {});
 
