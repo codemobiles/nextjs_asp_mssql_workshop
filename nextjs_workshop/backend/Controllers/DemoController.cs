@@ -15,6 +15,13 @@ namespace backend.Controllers
         {
         }
 
+        [HttpGet("")]
+        public ActionResult<IEnumerable<string>> GetProducts()
+        {
+            return new string[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+        }
+
+
 
     }
 }
