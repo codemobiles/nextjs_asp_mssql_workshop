@@ -101,6 +101,12 @@ const userSlice = createSlice({
       state.isAuthenticating = false;
       state.status = "failed";
     });
+
+    // SignIn (Inprogress or Pending)
+    builder.addCase(signIn.pending, (state, action) => {
+      state.error = undefined;
+      state.status = "fetching";
+    });
   },
   initialState,
 });
