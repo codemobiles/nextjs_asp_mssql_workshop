@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { UserData } from "@/models/user.model";
 
 interface SignAction {
   username: string;
@@ -30,7 +31,6 @@ export const signIn = createAsyncThunk(
     });
 
     const result = await response.json();
-    alert(JSON.stringify(result));
   }
 );
 
@@ -42,7 +42,13 @@ export const signUp = createAsyncThunk("user/signup", (user: SignAction) => {
 export const signOut = createAsyncThunk("user/signOut", async () => {});
 
 interface UserState {
-  count: number;
+  username: string;
+  error?: string;
+  status: "fetching" | "success" | "failed" | "init";
+  isAuthenticated: boolean;
+  isAuthenticating: boolean;
+  count: 0;
+  user?: UserData;
 }
 
 const initialState: UserState = { count: 0 };
