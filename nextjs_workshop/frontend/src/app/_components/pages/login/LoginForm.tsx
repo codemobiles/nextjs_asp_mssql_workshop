@@ -24,6 +24,7 @@ import {
   addAsync,
   remove,
   resetAsync,
+  signIn,
   userSelector,
 } from "@/store/slices/userSlice";
 
@@ -54,7 +55,11 @@ export default function LoginForm() {
 
   const showForm = () => {
     return (
-      <form onSubmit={handleSubmit(async (value: User) => {})}>
+      <form
+        onSubmit={handleSubmit(async (value: User) => {
+          dispatch(signIn(value));
+        })}
+      >
         {/* Username */}
         <Controller
           name="username"

@@ -19,7 +19,23 @@ export const resetAsync = createAsyncThunk(
   }
 );
 
-export const signIn = createAsyncThunk("user/signin", (user: SignAction) => {
+// SignIn
+export const signIn = createAsyncThunk(
+  "user/signin",
+  async (user: SignAction) => {
+    const response = await fetch("http://localhost:3000/api/auth/signin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+
+    const result = await response.json();
+    alert(JSON.stringify(result));
+  }
+);
+
+// SignUp
+export const signUp = createAsyncThunk("user/signup", (user: SignAction) => {
   alert(JSON.stringify(user));
 });
 
