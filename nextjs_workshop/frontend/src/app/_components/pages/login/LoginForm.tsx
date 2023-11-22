@@ -27,6 +27,7 @@ import {
   signIn,
   userSelector,
 } from "@/store/slices/userSlice";
+import { useAppDispatch } from "@/store/store";
 
 interface User {
   username: string;
@@ -35,7 +36,7 @@ interface User {
 
 export default function LoginForm() {
   const userReducer = useSelector(userSelector);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const router = useRouter();
   const initialValue: User = { username: "admin", password: "" };
@@ -57,7 +58,10 @@ export default function LoginForm() {
     return (
       <form
         onSubmit={handleSubmit(async (value: User) => {
-          dispatch(signIn(value));
+          const result = await dispatch(signIn(value));
+          if (result.meta.requestStatus == "fulfilled") {
+            alert("Login successuflly");
+          }
         })}
       >
         {/* Username */}
