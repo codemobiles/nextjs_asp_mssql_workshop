@@ -86,12 +86,20 @@ const userSlice = createSlice({
       state.count = action.payload;
     });
 
-    // SignIn
+    // SignIn (Fullfilled)
     builder.addCase(signIn.fulfilled, (state, action) => {
       state.error = undefined;
       state.isAuthenticated = true;
       state.isAuthenticating = false;
       state.status = "success";
+    });
+
+    // SignIn (Rejected)
+    builder.addCase(signIn.rejected, (state, action) => {
+      state.error = action.error.message;
+      state.isAuthenticated = false;
+      state.isAuthenticating = false;
+      state.status = "failed";
     });
   },
   initialState,
