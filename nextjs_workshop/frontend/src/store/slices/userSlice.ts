@@ -13,6 +13,12 @@ export const resetAsync = createAsyncThunk(
   }
 );
 
+interface UserState {
+  count: number;
+}
+
+const initialState: UserState = { count: 0 };
+
 const userSlice = createSlice({
   name: "user",
   reducers: {
@@ -32,7 +38,7 @@ const userSlice = createSlice({
       state.count = action.payload;
     });
   },
-  initialState: { count: 10 },
+  initialState,
 });
 
 export default userSlice.reducer;
