@@ -19,8 +19,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { add, addAsync, remove, resetAsync } from "@/store/slices/userSlice";
-import { RootState } from "@/store/store";
+import { add, addAsync, remove, resetAsync, userSelector } from "@/store/slices/userSlice";
 
 interface User {
   username: string;
@@ -28,7 +27,9 @@ interface User {
 }
 
 export default function LoginForm() {
-  const userReducer = useSelector((state: RootState) => state.userReducer);
+
+  
+  const userReducer = useSelector(userSelector);
   const dispatch = useDispatch();
 
   const router = useRouter();

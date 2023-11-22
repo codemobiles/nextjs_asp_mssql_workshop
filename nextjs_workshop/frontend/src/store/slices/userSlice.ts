@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 export const addAsync = createAsyncThunk("user/addAsync", async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -43,3 +44,4 @@ const userSlice = createSlice({
 
 export default userSlice.reducer;
 export const { add, remove } = userSlice.actions;
+export const userSelector = (state: RootState) => state.userReducer;
