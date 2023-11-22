@@ -15,5 +15,12 @@ namespace Controllers.Controllers
         {
         }
 
+        [HttpPost("")]
+        public IActionResult Register([] model)
+        {
+            return null;
+        }
+
+
     }
 }
