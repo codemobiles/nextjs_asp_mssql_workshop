@@ -23,13 +23,13 @@ namespace Controllers.Controllers
         [HttpPost(ACTION)]
         public IActionResult Register([FromBody] User user)
         {
-            return Ok(new { result = "ok", message = "register successfully", });
+            return Ok(new { result = "ok", message = "register successfully", user });
         }
 
         [HttpPost(ACTION)]
         public IActionResult Login([FromBody] User user)
         {
-            return Ok(new { result = "ok", message = "login successfully", });
+            return Ok(new { result = "ok", message = "login successfully", user });
         }
 
 
