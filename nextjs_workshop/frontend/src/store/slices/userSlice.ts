@@ -51,7 +51,13 @@ interface UserState {
   user?: UserData;
 }
 
-const initialState: UserState = { count: 0 };
+const initialState: UserState = {
+  username: "",
+  status: "init",
+  isAuthenticated: false,
+  isAuthenticating: true,
+  count: 0,
+};
 
 const userSlice = createSlice({
   name: "user",
