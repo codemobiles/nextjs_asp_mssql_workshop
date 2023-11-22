@@ -11,8 +11,8 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import { Badge, Menu, MenuItem } from "@mui/material";
-import { useAppDispatch } from "@/src/store/store";
-import { signOut } from "@/src/store/slices/userSlice";
+import { useAppDispatch } from "@/store/store";
+import { signOut } from "@/store/slices/userSlice";
 import { useRouter } from "next/navigation";
 
 const drawerWidth = 240;
