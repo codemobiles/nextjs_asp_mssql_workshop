@@ -12,14 +12,24 @@ namespace Controllers.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+
+        private const string ACTION = "[action]";
+
+
         public AuthController()
         {
         }
 
-        [HttpPost("")]
+        [HttpPost(ACTION)]
         public IActionResult Register([FromBody] User user)
         {
-            return Ok(new { result = "ok", message = "register successfully", user });
+            return Ok(new { result = "ok", message = "register successfully", });
+        }
+
+        [HttpPost(ACTION)]
+        public IActionResult Login([FromBody] User user)
+        {
+            return Ok(new { result = "ok", message = "login successfully", });
         }
 
 
