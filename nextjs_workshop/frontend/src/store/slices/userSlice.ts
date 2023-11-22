@@ -1,14 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+export const addAsync = createAsyncThunk("addAsync", async () => {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return 2;
+});
+
+const resetAsync = async (resetValue: number) => {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+  return resetValue;
+};
 
 const userSlice = createSlice({
   name: "user",
   reducers: {
     add: (state) => {
-      state.count++;
+      state.count++; // synchronized
     },
     remove: (state) => {
       state.count--;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(addAsync.fulfilled, (state, action) => {
+      state.count = state.count + action.payload;
+    });
   },
   initialState: { count: 10 },
 });

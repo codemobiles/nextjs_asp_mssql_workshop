@@ -19,8 +19,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "@/store/store";
-import { add, remove } from "@/store/slices/userSlice";
+import { add, addAsync, remove } from "@/store/slices/userSlice";
 
 interface User {
   username: string;
@@ -141,7 +140,8 @@ export default function LoginForm() {
 
           <Button
             onClick={() => {
-              dispatch(add());
+              // dispatch(add());
+              dispatch(addAsync());
             }}
             type="button"
             fullWidth
