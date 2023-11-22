@@ -125,6 +125,7 @@ export default function LoginForm() {
           sx={{ mt: 3 }}
           type="submit"
           fullWidth
+          disabled={userReducer.status == "fetching"}
           variant="contained"
           color="primary"
         >
