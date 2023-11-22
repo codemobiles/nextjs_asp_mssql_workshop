@@ -14,6 +14,8 @@ export const resetAsync = createAsyncThunk(
   }
 );
 
+export const signOut = createAsyncThunk("user/signOut", async () => {});
+
 interface UserState {
   count: number;
 }
