@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 //using Controllers.Models;
 
@@ -16,9 +17,9 @@ namespace Controllers.Controllers
         }
 
         [HttpPost("")]
-        public IActionResult Register([] model)
+        public IActionResult Register([FromBody] User user)
         {
-            return null;
+            return Ok(new { result = "ok", message = "register successfully", user });
         }
 
 
