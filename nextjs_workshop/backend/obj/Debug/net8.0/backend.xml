@@ -30,5 +30,8 @@
             GetSession
             </summary>
         </member>
+        <member name="M:backend.Controllers.v1.ProductController.SearchProduct(System.String)">
+            ..../search/name?keyword=1234
+        </member>
     </members>
 </doc>
