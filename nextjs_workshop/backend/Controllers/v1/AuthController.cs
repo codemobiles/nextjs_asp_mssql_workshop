@@ -24,7 +24,7 @@ namespace Controllers.Controllers
         private readonly IMapper _mapper;
         private readonly IAuthRepository _authRepository;
 
-        public AuthController(IMapper mapper, IAuthRepository authRepository)
+        public AuthController(IMapper mapper, IAuthRepository authRepository, )
         {
             this._authRepository = authRepository;
             this._mapper = mapper;

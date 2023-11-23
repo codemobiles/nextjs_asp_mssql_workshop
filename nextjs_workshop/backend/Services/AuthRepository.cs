@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using backend.Database;
+using backend.Installers;
 using backend.Models;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
@@ -9,9 +10,11 @@ namespace backend.Services
     {
 
         private readonly DatabaseContext _context;
+        private readonly JwtSettings _jwtSettings;
 
-        public AuthRepository(DatabaseContext context)
+        public AuthRepository(DatabaseContext context, JwtSettings jwtSettings)
         {
+            _jwtSettings = jwtSettings;
             _context = context;
 
         }
