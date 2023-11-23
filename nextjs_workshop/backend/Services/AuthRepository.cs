@@ -28,7 +28,7 @@ namespace backend.Services
             var token = String.Empty;
             if (result != null && VerifyPassword(result.Password!, user.Password!))
             {
-                token = BuildToken(result);
+                token = BuildToken(result); 
             }
 
             return (result, token);
