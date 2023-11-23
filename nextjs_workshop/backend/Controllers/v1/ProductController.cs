@@ -16,5 +16,12 @@ namespace backend.Controllers
         }
 
 
+        [HttpGet("")]
+        public IActionResult GetProducts()
+        {
+
+            return Ok(new string[] { "arduino", "sensor" });
+        }
+
     }
 }
