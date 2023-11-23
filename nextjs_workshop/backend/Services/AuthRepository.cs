@@ -22,7 +22,12 @@ namespace backend.Services
 
         public void Register(User user)
         {
-            throw new NotImplementedException();
+            if (user.Password != null)
+            {
+                user.Password = CreatePasswordHash(user.Password);
+                _context.Users.Add(user);
+                _context.SaveChanges();
+            }
         }
 
 
