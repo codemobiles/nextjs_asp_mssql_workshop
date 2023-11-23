@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u2T/j0SyVnZxW1KBEKPwNICTd1UgAxCV9XnzjlUWEHM=",
+  "Hash": "bCIyV7nT3dGjinqP+vTSRXzwlLWkk7z1WUBV6HI5zic=",
   "Source": "backend",
   "BasePath": "_content/backend",
   "Mode": "Default",
@@ -528,6 +528,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/f8b53da9-f740-4ccf-9fea-f0eae92fe96a.JPG"
+    },
+    {
+      "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/fb4a0277-634d-4be6-b1fe-5fdc2ac5c877.png",
+      "SourceId": "backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/",
+      "BasePath": "_content/backend",
+      "RelativePath": "images/fb4a0277-634d-4be6-b1fe-5fdc2ac5c877.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/fb4a0277-634d-4be6-b1fe-5fdc2ac5c877.png"
     },
     {
       "Identity": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/ffa78edf-2360-4582-bc5d-dcabd25eaba7.png",
