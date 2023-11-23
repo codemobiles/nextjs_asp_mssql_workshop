@@ -7,6 +7,11 @@ namespace backend.Installers
 {
     public static class InstallerExtensions
     {
+        public static void InstallServiceInAssembly(this IServiceCollection services, IConfiguration configuration)
+        {
+
+        }
+
 
     }
 }
