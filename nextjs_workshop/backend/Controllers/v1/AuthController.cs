@@ -6,6 +6,8 @@ using AutoMapper;
 using backend.Models;
 using backend.Services;
 using backend.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+
 
 
 // using backend.Models;
@@ -14,6 +16,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Controllers.Controllers
 {
+    /// <summary>
+    /// AuthController
+    /// </summary>
     [Route("api/v1/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -24,12 +29,18 @@ namespace Controllers.Controllers
         private readonly IMapper _mapper;
         private readonly IAuthRepository _authRepository;
 
+        /// <summary>
+        /// AuthController constructor
+        /// </summary>
         public AuthController(IMapper mapper, IAuthRepository authRepository)
         {
             this._authRepository = authRepository;
             this._mapper = mapper;
         }
 
+        /// <summary>
+        /// Regisration route
+        /// </summary>
         [HttpPost(ACTION)]
         public IActionResult Register([FromBody] RegisterViewModel registerViewModel)
         {
@@ -39,6 +50,10 @@ namespace Controllers.Controllers
 
         }
 
+        /// <summary>
+        /// Login - default account(admin and 12341234)
+        /// </summary>
+        /// <param name="loginViewModel">default account: {"username": "admin","password": "12341234"}</param>        
         [HttpPost(ACTION)]
         public IActionResult Login([FromBody] LoginViewModel loginViewModel)
         {
@@ -57,6 +72,23 @@ namespace Controllers.Controllers
             }
 
             return Ok(new { token = token, message = "login successfully" });
+        }
+
+        /// <summary>
+        /// GetSession
+        /// </summary>
+        [Authorize]
+        [HttpGet(ACTION)]
+        public IActionResult GeSession()
+        {
+
+            const string firstname = "Chaiyasit";
+            const string lastname = "T.";
+            const string email = "admin@gmail.com";
+            const string image = "https://codemobiles.com/biz/images/cm_logo.svg";
+            const string token = "12341234";
+
+            return Ok(new { result = "ok", user = new { username = "admin", firstname, lastname, email, image, token } });
         }
 
 
