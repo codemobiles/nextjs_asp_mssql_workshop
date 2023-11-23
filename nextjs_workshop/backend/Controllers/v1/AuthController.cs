@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using backend.Models;
+using backend.Services;
 using backend.ViewModels;
 
 
@@ -21,9 +22,11 @@ namespace Controllers.Controllers
         private const string ACTION = "[action]";
 
         private readonly IMapper _mapper;
+        private readonly IAuthRepository _authRepository;
 
-        public AuthController(IMapper mapper)
+        public AuthController(IMapper mapper, IAuthRepository authRepository)
         {
+            this._authRepository = authRepository;
             this._mapper = mapper;
         }
 
@@ -31,7 +34,9 @@ namespace Controllers.Controllers
         public IActionResult Register([FromBody] RegisterViewModel registerViewModel)
         {
             var user = _mapper.Map<User>(registerViewModel);
-            return Ok(new { result = "ok", message = "register successfully", user });
+            _authRepository.Register(user);
+            return Ok(new { result = "ok", message = "register successfully" });
+
         }
 
         [HttpPost(ACTION)]
