@@ -44,7 +44,19 @@ namespace Controllers.Controllers
         {
 
             var user = _mapper.Map<User>(loginViewModel);
-            return Ok(new { result = "ok", message = "login successfully", user });
+            (User result, string token) = _authRepository.Login(user);
+
+            if (result == null)
+            {
+                return Unauthorized(new { token = "", message = "username invalid" });
+            }
+
+            if (String.IsNullOrEmpty(token))
+            {
+                return Unauthorized(new { token = "", message = "password invalid" });
+            }
+
+            return Ok(new { token = token, message = "login successfully" });
         }
 
 
