@@ -19,7 +19,8 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { remove, add } from "@/store/slices/userSlice";
+import { remove, add, signUp } from "@/store/slices/userSlice";
+import { useAppDispatch } from "@/store/store";
 
 interface User {
   username: string;
@@ -35,7 +36,7 @@ export default function RegisterForm() {
   });
 
   const userReducer = useSelector((state: any) => state.userReducer);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const {
     control,
@@ -48,7 +49,16 @@ export default function RegisterForm() {
 
   const showForm = () => {
     return (
-      <form onSubmit={handleSubmit(async (value: User) => {})}>
+      <form
+        onSubmit={handleSubmit(async (value: User) => {
+          const result = await dispatch(signUp(value));
+          if (result.meta.requestStatus == "fulfilled") {
+            alert("Register successfully");
+          } else {
+            alert("Register failed");
+          }
+        })}
+      >
         {/* Username */}
         <Controller
           name="username"
