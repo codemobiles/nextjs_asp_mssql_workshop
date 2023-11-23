@@ -34,7 +34,7 @@ namespace Controllers.Controllers
         public IActionResult Login([FromBody] LoginViewModel loginViewModel)
         {
 
-
+            var user = _mapper.Map<User>(loginViewModel);
             return Ok(new { result = "ok", message = "login successfully", user });
         }
 
