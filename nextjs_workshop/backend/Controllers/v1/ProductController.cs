@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using backend.Database;
 using Microsoft.AspNetCore.Mvc;
 //using backend.Models;
 
@@ -11,8 +12,10 @@ namespace backend.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        public ProductController()
+        private readonly DatabaseContext context;
+        public ProductController(DatabaseContext context)
         {
+            this.context = context;
         }
 
 
@@ -20,7 +23,8 @@ namespace backend.Controllers
         public IActionResult GetProducts()
         {
 
-            return Ok(new string[] { "arduino", "sensor" });
+            var result = this.context.Products.ToList();
+            return Ok(result);
         }
 
     }
