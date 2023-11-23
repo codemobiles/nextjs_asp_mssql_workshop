@@ -7,5 +7,6 @@ public class AutoMapping : Profile
     public AutoMapping()
     {
         CreateMap<LoginViewModel, User>(); // map from UserViewModel to Users
+        CreateMap<RegisterViewModel, User>(); // map from UserViewModel to Users
     }
 }

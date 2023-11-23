@@ -28,8 +28,9 @@ namespace Controllers.Controllers
         }
 
         [HttpPost(ACTION)]
-        public IActionResult Register([FromBody] User user)
+        public IActionResult Register([FromBody] RegisterViewModel registerViewModel)
         {
+            var user = _mapper.Map<User>(registerViewModel);
             return Ok(new { result = "ok", message = "register successfully", user });
         }
 
@@ -39,7 +40,7 @@ namespace Controllers.Controllers
 
             var user = _mapper.Map<User>(loginViewModel);
             return Ok(new { result = "ok", message = "login successfully", user });
-        } 
+        }
 
 
     }
