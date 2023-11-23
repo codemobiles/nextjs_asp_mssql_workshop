@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using backend.Models;
+using backend.ViewModels;
+
 
 // using backend.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -29,8 +31,10 @@ namespace Controllers.Controllers
         }
 
         [HttpPost(ACTION)]
-        public IActionResult Login([FromBody] User user)
+        public IActionResult Login([FromBody] LoginViewModel loginViewModel)
         {
+
+
             return Ok(new { result = "ok", message = "login successfully", user });
         }
 
