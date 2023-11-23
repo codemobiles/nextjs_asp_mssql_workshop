@@ -13,6 +13,7 @@ namespace backend.Installers
                         typeof(IInstaller).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
                         .Select(Activator.CreateInstance).Cast<IInstaller>().ToList();
             installers.ForEach(installer => installer.InstallServices(services, configuration));
+
         }
 
 
