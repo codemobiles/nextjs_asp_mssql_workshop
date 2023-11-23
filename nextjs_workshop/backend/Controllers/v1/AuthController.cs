@@ -20,11 +20,11 @@ namespace Controllers.Controllers
 
         private const string ACTION = "[action]";
 
-        private readonly IMapper mapper;
+        private readonly IMapper _mapper;
 
         public AuthController(IMapper mapper)
         {
-            this.mapper = mapper;
+            this._mapper = mapper;
         }
 
         [HttpPost(ACTION)]
