@@ -40,6 +40,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseStaticFiles();
 app.UseHttpsRedirection();
+// app.UseCors("AllowSpecificOrigins");
+app.UseCors("AllowAllOrigins");
 app.UseAuthentication(); // jwt
 app.UseAuthorization();
 
