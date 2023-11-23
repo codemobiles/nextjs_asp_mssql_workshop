@@ -5,6 +5,7 @@ using backend.Database;
 using backend.Installers;
 using Autofac;
 using System.Reflection;
+using Autofac.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,6 +21,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 // builder.Services.AddTransient<IProductRepository, ProductRepository>();
 // builder.Services.AddTransient<IAuthRepository, AuthRepository>();
 
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 // Option 2# to Auto Add Services
 builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterAssemblyTypes(Assembly.GetEntryAssembly())
     .Where(t => t.Name.EndsWith("Repository")) // Suffix Naming of AuthRepository, ProductRepository
