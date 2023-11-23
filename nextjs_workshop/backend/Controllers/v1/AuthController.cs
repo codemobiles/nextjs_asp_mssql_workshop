@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using backend.Models;
 using backend.ViewModels;
 
@@ -19,9 +20,11 @@ namespace Controllers.Controllers
 
         private const string ACTION = "[action]";
 
+        private readonly IMapper mapper;
 
-        public AuthController()
+        public AuthController(IMapper mapper)
         {
+            this.mapper = mapper;
         }
 
         [HttpPost(ACTION)]
