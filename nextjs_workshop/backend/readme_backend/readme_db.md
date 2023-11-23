@@ -31,7 +31,7 @@ https://gist.github.com/iBlurBlur/f3fda898164f8db0c0da619e2d731098
 
 <InvariantGlobalization>false</InvariantGlobalization>
 
-dotnet ef dbcontext scaffold "Server=localhost,1433;user id=sa; password=Mflv[Mflv[; Database=demopos; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c DatabaseContext --context-dir Database
+dotnet ef dbcontext scaffold "Server=localhost;user id=sa; password=Mflv[Mflv[; Database=demopos; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c DatabaseContext --context-dir Database
 
 # nuget command lines
 
