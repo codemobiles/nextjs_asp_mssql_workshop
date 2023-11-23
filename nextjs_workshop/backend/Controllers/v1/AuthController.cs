@@ -39,7 +39,7 @@ namespace Controllers.Controllers
 
             var user = _mapper.Map<User>(loginViewModel);
             return Ok(new { result = "ok", message = "login successfully", user });
-        }
+        } 
 
 
     }
