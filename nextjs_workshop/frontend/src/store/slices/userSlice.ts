@@ -42,9 +42,24 @@ export const signIn = createAsyncThunk(
 );
 
 // SignUp
-export const signUp = createAsyncThunk("user/signup", (user: SignAction) => {
-  alert(JSON.stringify(user));
-});
+export const signUp = createAsyncThunk(
+  "user/signup",
+  async (user: SignAction) => {
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    const response = await fetch("http://localhost:8081/api/v1/Auth/Register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+
+    const result = await response.json();
+    if (result.result != "ok") {
+      throw new Error("Invalid username or password");
+    }
+
+    return result;
+  }
+);
 
 export const signOut = createAsyncThunk("user/signOut", async () => {});
 
