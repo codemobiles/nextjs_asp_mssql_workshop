@@ -12,20 +12,19 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace backend.Controllers.v1
 {
-    [ApiVersion("1.0")]
     [ApiController]
     // [Authorize(Roles = "Admin")] // JWT Claim("role")
     [Authorize]
-    [Route("api/v{version:apiVersion}/[controller]")]
+    [Route("api/v1/[controller]")]
     public class ProductController : ControllerBase
     {
-        private readonly ILogger<ProductController> _logger;
+
         private readonly IProductRepository _productRepository;
         public IMapper _mapper { get; }
 
-        public ProductController(ILogger<ProductController> logger, IProductRepository productRepository, IMapper mapper)
+        public ProductController(IProductRepository productRepository, IMapper mapper)
         {
-            _logger = logger;
+
             _productRepository = productRepository;
             _mapper = mapper;
         }
@@ -51,7 +50,7 @@ namespace backend.Controllers.v1
             }
             catch (Exception error)
             {
-                _logger.LogError($"Log GetProduct: {error}");
+                // _logger.LogError($"Log GetProduct: {error}");
                 return StatusCode(500, new { message = error });
             }
         }
@@ -67,7 +66,7 @@ namespace backend.Controllers.v1
             }
             catch (Exception error)
             {
-                _logger.LogError($"Log SearchProducts: {error}");
+                // _logger.LogError($"Log SearchProducts: {error}");
                 return StatusCode(500, new { message = error });
             }
         }
@@ -87,7 +86,7 @@ namespace backend.Controllers.v1
             }
             catch (Exception error)
             {
-                _logger.LogError($"Log CreateProduct: {error}");
+                // _logger.LogError($"Log CreateProduct: {error}");
                 return StatusCode(500, new { message = error });
             }
         }
@@ -116,7 +115,7 @@ namespace backend.Controllers.v1
             }
             catch (Exception error)
             {
-                _logger.LogError($"Log UpdateProduct: {error}");
+                // _logger.LogError($"Log UpdateProduct: {error}");
                 return StatusCode(500, new { message = error });
             }
         }
@@ -136,7 +135,7 @@ namespace backend.Controllers.v1
             }
             catch (Exception error)
             {
-                _logger.LogError($"Log DeleteProduct: {error}");
+                // _logger.LogError($"Log DeleteProduct: {error}");
                 return StatusCode(500, new { message = error });
             }
         }
