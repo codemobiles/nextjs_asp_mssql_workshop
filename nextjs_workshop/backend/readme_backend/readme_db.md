@@ -20,10 +20,10 @@ https://gist.github.com/iBlurBlur/f3fda898164f8db0c0da619e2d731098
 
 # install dotnet-ef
 
-dotnet tool install --global dotnet-ef
-dotnet tool update --global dotnet-ef
-dotnet tool uninstall --global dotnet-ef
-dotnet-ef --version
+- dotnet tool install --global dotnet-ef
+- dotnet tool update --global dotnet-ef
+- dotnet tool uninstall --global dotnet-ef
+- dotnet-ef --version
 
 # work on both window and mac
 
