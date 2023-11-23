@@ -4,5 +4,31 @@
         <name>backend</name>
     </assembly>
     <members>
+        <member name="T:Controllers.Controllers.AuthController">
+            <summary>
+            AuthController
+            </summary>
+        </member>
+        <member name="M:Controllers.Controllers.AuthController.#ctor(AutoMapper.IMapper,backend.Services.IAuthRepository)">
+            <summary>
+            AuthController constructor
+            </summary>
+        </member>
+        <member name="M:Controllers.Controllers.AuthController.Register(backend.ViewModels.RegisterViewModel)">
+            <summary>
+            Regisration route
+            </summary>
+        </member>
+        <member name="M:Controllers.Controllers.AuthController.Login(backend.ViewModels.LoginViewModel)">
+            <summary>
+            Login - default account(admin and 12341234)
+            </summary>
+            <param name="loginViewModel">default account: {"username": "admin","password": "12341234"}</param>        
+        </member>
+        <member name="M:Controllers.Controllers.AuthController.GeSession">
+            <summary>
+            GetSession
+            </summary>
+        </member>
     </members>
 </doc>
