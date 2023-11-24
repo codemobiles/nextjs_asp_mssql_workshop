@@ -232,7 +232,11 @@ export default function StockForm() {
       <Grid container style={{ marginBottom: 16 }} spacing={7}>
         <Grid item lg={3} md={6} sm={12}>
           <StockCard
-            icon={AddShoppingCart}
+            icon={() => (
+              <Button variant="text">
+                <AddShoppingCart />
+              </Button>
+            )}
             title="TOTAL"
             subtitle="112 THB"
             color="#00a65a"
