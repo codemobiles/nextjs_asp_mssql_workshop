@@ -8,6 +8,8 @@ export default function StockAddPage({}: Props) {
     <Box>
       <form>
         <TextField fullWidth label="Name" />
+        <TextField fullWidth label="Price" sx={{ mt: 1 }} />
+        <TextField fullWidth label="Stock" sx={{ mt: 1 }} />
         <Button variant="contained" fullWidth sx={{ mt: 8 }}>
           Submit
         </Button>
