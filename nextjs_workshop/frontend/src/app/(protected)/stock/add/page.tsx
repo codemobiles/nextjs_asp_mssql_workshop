@@ -10,8 +10,7 @@ type Props = {};
 
 export default function StockAddPage({}: Props) {
   // setup react hook form
-  const defaultValues: ProductData = { name: "", price: 100, stock: 200 };
-  const { control, handleSubmit } = useForm({ defaultValues });
+  const { control, handleSubmit } = useForm<ProductData>();
 
   return (
     <Box>
@@ -25,7 +24,9 @@ export default function StockAddPage({}: Props) {
         />
 
         <TextField fullWidth label="Price" sx={{ mt: 1 }} />
+
         <TextField fullWidth label="Stock" sx={{ mt: 1 }} />
+
         <Button variant="contained" fullWidth sx={{ mt: 8 }}>
           Submit
         </Button>
