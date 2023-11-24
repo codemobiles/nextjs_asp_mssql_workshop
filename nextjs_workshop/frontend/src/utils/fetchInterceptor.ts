@@ -1,6 +1,6 @@
 import { ACCESS_TOKEN_KEY } from "./constant";
 import { isClient } from "./commonUtil";
-import { getTokenFromCookie } from "../app/_actions/headerAction";
+import { getTokenFromCookie } from "@/_actions/headerAction";
 import { getCookie } from "cookies-next";
 
 // POST
