@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "@/store/store";
 import ReduxProvider from "./_components/common/ReduxProvider";
 import ThemeRegistry from "./_components/ThemeRegistry/ThemeRegistry";
+import AuthProvider from "./_components/common/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <Provider store={store}>{children}</Provider> */}
         <ReduxProvider>
-          <ThemeRegistry>{children}</ThemeRegistry>
+          <ThemeRegistry>
+            <AuthProvider>{children}</AuthProvider>
+          </ThemeRegistry>
         </ReduxProvider>
       </body>
     </html>
