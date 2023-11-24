@@ -112,6 +112,15 @@ const userSlice = createSlice({
       state.error = undefined;
       state.status = "fetching";
     });
+
+    // Get Session
+    builder.addCase(getSession.fulfilled, (state, action) => {
+      state.isAuthenticating = false;
+      if (action.payload && action.payload.user) {
+        state.user = action.payload.user;
+        state.isAuthenticated = true;
+      }
+    });
   },
   initialState,
 });
