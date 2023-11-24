@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { getProducts, productSelector } from "@/store/slices/productSlice";
 import { NumericFormat } from "react-number-format";
 import dayjs from "dayjs";
+import { Typography } from "@mui/material";
 
 const columns: GridColDef[] = [
   { field: "productId", headerName: "ID", width: 70 },
@@ -16,7 +17,18 @@ const columns: GridColDef[] = [
     headerName: "Price",
     width: 130,
     renderCell({ value }) {
-      return <b>{value}</b>;
+      return (
+        <Typography variant="body1">
+          <NumericFormat
+            value={value}
+            displayType={"text"}
+            thousandSeparator={true}
+            decimalScale={2}
+            fixedDecimalScale={true}
+            suffix="฿"
+          />
+        </Typography>
+      );
     },
   },
   { field: "stock", headerName: "Stock", width: 130 },
