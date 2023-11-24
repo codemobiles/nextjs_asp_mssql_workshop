@@ -18,7 +18,7 @@ export async function GET(
   if (route === "signout") {
     return signout(request);
   } else if (route === "session") {
-    // return getSession(request);
+    return getSession(request);
   }
   return NextResponse.json({ route });
 }
@@ -43,6 +43,16 @@ function signout(request: NextRequest) {
   const cookieStore = cookies();
   cookieStore.delete(ACCESS_TOKEN_KEY);
   return NextResponse.json({ result: "ok" });
+}
+
+async function getSession(req: NextRequest) {
+  try {
+    const response = await fetchInterceptor.get("/auth/gesession");
+    return NextResponse.json(response);
+  } catch (error) {
+    console.log("response: " + error);
+    return NextResponse.json({ result: "nok" });
+  }
 }
 
 async function signin(body: {
