@@ -8,7 +8,11 @@ import { getProducts, productSelector } from "@/store/slices/productSlice";
 
 const columns: GridColDef[] = [
   { field: "productId", headerName: "ID", width: 70 },
-  { field: "name", headerName: "Name", width: 330 },
+  { field: "name", headerName: "Name", width: 500 },
+  { field: "price", headerName: "Price", width: 130 },
+  { field: "stock", headerName: "Stock", width: 130 },
+  { field: "created", headerName: "Created", width: 250 },
+  // price, stock
 ];
 
 export default function StockForm() {
