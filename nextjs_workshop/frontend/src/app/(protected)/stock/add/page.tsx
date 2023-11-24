@@ -29,7 +29,14 @@ export default function StockAddPage({}: Props) {
           name="name"
           control={control}
           render={({ field }) => (
-            <TextField {...field} fullWidth label="Name" sx={{ mt: 1 }} />
+            <TextField
+              {...field}
+              error
+              helperText="Name is required"
+              fullWidth
+              label="Name"
+              sx={{ mt: 1 }}
+            />
           )}
         />
 
