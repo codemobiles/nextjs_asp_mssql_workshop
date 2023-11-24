@@ -8,9 +8,24 @@ import { getProducts, productSelector } from "@/store/slices/productSlice";
 import { NumericFormat } from "react-number-format";
 import dayjs from "dayjs";
 import { Typography } from "@mui/material";
-
+import Image from "next/image";
 const columns: GridColDef[] = [
   { field: "productId", headerName: "ID", width: 70 },
+  {
+    field: "image",
+    headerName: "Image",
+    width: 70,
+    renderCell(params) {
+      return (
+        <Image
+          alt="product image"
+          src="https://codemobiles.com/biz/images/cm_logo.svg?ref=10"
+          width={70}
+          height={70}
+        />
+      );
+    },
+  },
   { field: "name", headerName: "Name", width: 500 },
   {
     field: "price",
