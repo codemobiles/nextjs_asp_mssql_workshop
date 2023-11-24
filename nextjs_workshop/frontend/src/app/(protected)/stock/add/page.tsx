@@ -14,7 +14,11 @@ export default function StockAddPage({}: Props) {
 
   return (
     <Box>
-      <form onSubmit={handleSubmit(() => {})}>
+      <form
+        onSubmit={handleSubmit((values) => {
+          alert(JSON.stringify(values));
+        })}
+      >
         <Controller
           name="name"
           control={control}
@@ -23,9 +27,21 @@ export default function StockAddPage({}: Props) {
           )}
         />
 
-        <TextField fullWidth label="Price" sx={{ mt: 1 }} />
+        <Controller
+          name="price"
+          control={control}
+          render={({ field }) => (
+            <TextField {...field} fullWidth label="Price" sx={{ mt: 1 }} />
+          )}
+        />
 
-        <TextField fullWidth label="Stock" sx={{ mt: 1 }} />
+        <Controller
+          name="stock"
+          control={control}
+          render={({ field }) => (
+            <TextField {...field} fullWidth label="Stock" sx={{ mt: 1 }} />
+          )}
+        />
 
         <Button variant="contained" fullWidth sx={{ mt: 8 }}>
           Submit
