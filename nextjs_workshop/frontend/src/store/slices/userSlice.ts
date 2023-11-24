@@ -4,7 +4,6 @@ import { UserData } from "@/models/user.model";
 import build from "next/dist/build";
 import * as serverService from "@/services/serverService";
 
-
 interface SignAction {
   username: string;
   password: string;
@@ -48,7 +47,7 @@ export const signUp = createAsyncThunk(
   "user/signup",
   async (user: SignAction) => {
     await new Promise((resolve) => setTimeout(resolve, 300));
-    const result = 
+    const result = await serverService.signUp(user);
     return result;
   }
 );
