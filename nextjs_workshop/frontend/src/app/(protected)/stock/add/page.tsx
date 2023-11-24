@@ -9,6 +9,12 @@ import { ProductData } from "@/models/product.model";
 type Props = {};
 
 export default function StockAddPage({}: Props) {
+  const formValidateSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required").trim(),
+    price: Yup.number().min(100, "Number must be greater than 100"),
+    stock: Yup.number().min(100, "Number must be greater than 100"),
+  });
+
   // setup react hook form
   const { control, handleSubmit } = useForm<ProductData>();
 
@@ -43,7 +49,7 @@ export default function StockAddPage({}: Props) {
           )}
         />
 
-        <Button variant="contained" fullWidth sx={{ mt: 8 }}>
+        <Button type="submit" variant="contained" fullWidth sx={{ mt: 8 }}>
           Submit
         </Button>
       </form>
