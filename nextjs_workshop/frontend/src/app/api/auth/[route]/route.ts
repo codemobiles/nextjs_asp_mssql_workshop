@@ -19,6 +19,12 @@ export async function POST(
   }
 }
 
+function signout(request: NextRequest) {
+  const cookieStore = cookies();
+  cookieStore.delete(ACCESS_TOKEN_KEY);
+  return NextResponse.json({ result: "ok" });
+}
+
 async function signin(body: {
   username: string;
   password: string;
@@ -26,7 +32,7 @@ async function signin(body: {
   try {
     const response = await fetchInterceptor.post(`/auth/login`, body);
     const { token } = response;
-    console.log("Debug Token: " + token);
+
     cookies().set(ACCESS_TOKEN_KEY, token, {
       secure: true,
       sameSite: "strict",
