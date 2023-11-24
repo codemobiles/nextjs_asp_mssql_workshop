@@ -32,7 +32,16 @@ const columns: GridColDef[] = [
     },
   },
   { field: "stock", headerName: "Stock", width: 130 },
-  { field: "created", headerName: "Created", width: 250 },
+  {
+    field: "createdAt",
+    headerName: "Timestamp",
+    width: 230,
+    renderCell: ({ value }) => (
+      <Typography variant="body1">
+        {dayjs(value).format("DD/MM/YYYY HH:mm")}
+      </Typography>
+    ),
+  },
   // price, stock
 ];
 
