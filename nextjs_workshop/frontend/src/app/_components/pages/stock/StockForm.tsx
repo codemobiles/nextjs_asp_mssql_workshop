@@ -56,6 +56,7 @@ export default function StockForm() {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const [openDialog, setOpenDialog] = useState(false);
+  const [openMyDialog, setOpenMyDialog] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<ProductData | null>(
     null
   );
@@ -184,6 +185,10 @@ export default function StockForm() {
         alert("Failed to delete");
       }
     }
+  };
+
+  const handleCloseMyDialog = () => {
+    setOpenMyDialog(false);
   };
 
   const showMyDialog = () => {
