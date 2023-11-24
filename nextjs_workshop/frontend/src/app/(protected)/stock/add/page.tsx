@@ -126,7 +126,7 @@ export default function StockCreate() {
             type="file"
             fullWidth
             onChange={(e: React.ChangeEvent<any>) => {
-              e.preventDefault();
+              //   e.preventDefault();
               setValue("file", e.target.files[0]); // for upload
               setValue("file_obj", URL.createObjectURL(e.target.files[0])); // for preview image
             }}
