@@ -234,7 +234,7 @@ export default function StockForm() {
           <StockCard
             icon={() => (
               <Button variant="text">
-                <AddShoppingCart />
+                <AddShoppingCart className="text-white" fontSize="large" />
               </Button>
             )}
             title="TOTAL"
