@@ -120,6 +120,9 @@ export default function StockForm() {
         }}
         pageSizeOptions={[5, 10]}
         checkboxSelection
+        slots={{
+          toolbar: CustomToolbar,
+        }}
       />
     </div>
   );
