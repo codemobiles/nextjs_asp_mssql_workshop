@@ -9,19 +9,20 @@ import { NumericFormat } from "react-number-format";
 import dayjs from "dayjs";
 import { Typography } from "@mui/material";
 import Image from "next/image";
+import { productImageURL } from "@/utils/commonUtil";
 const columns: GridColDef[] = [
   { field: "productId", headerName: "ID", width: 70 },
   {
     field: "image",
     headerName: "Image",
     width: 70,
-    renderCell(params) {
+    renderCell({ value }) {
       return (
         <Image
           alt="product image"
-          src="https://codemobiles.com/biz/images/cm_logo.svg?ref=10"
-          width={70}
-          height={70}
+          src={productImageURL(value)}
+          width={40}
+          height={40}
         />
       );
     },
