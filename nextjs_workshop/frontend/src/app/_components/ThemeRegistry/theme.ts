@@ -10,6 +10,11 @@ const roboto = Roboto({
 const drawerWidth = 240;
 const theme = createTheme({
   components: {
+    MuiButton: {
+      styleOverrides: {
+        root: { borderRadius: 10 },
+      },
+    },
     MuiDrawer: {
       styleOverrides: {
         paper: {

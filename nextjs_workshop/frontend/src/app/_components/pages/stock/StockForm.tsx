@@ -5,11 +5,20 @@ import { useEffect } from "react";
 import { RootState, useAppDispatch } from "@/store/store";
 import { useSelector } from "react-redux";
 import { getProducts, productSelector } from "@/store/slices/productSlice";
+import { NumericFormat } from "react-number-format";
+import dayjs from "dayjs";
 
 const columns: GridColDef[] = [
   { field: "productId", headerName: "ID", width: 70 },
   { field: "name", headerName: "Name", width: 500 },
-  { field: "price", headerName: "Price", width: 130 },
+  {
+    field: "price",
+    headerName: "Price",
+    width: 130,
+    renderCell({ value }) {
+      return <b>{value}</b>;
+    },
+  },
   { field: "stock", headerName: "Stock", width: 130 },
   { field: "created", headerName: "Created", width: 250 },
   // price, stock
