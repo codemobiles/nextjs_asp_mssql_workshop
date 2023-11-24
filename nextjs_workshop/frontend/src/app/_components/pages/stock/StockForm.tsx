@@ -118,7 +118,7 @@ export default function StockForm() {
       width: 120,
       renderCell: ({ row }: GridRenderCellParams<any>) => (
         <Stack direction="row">
-          <IconButton 
+          <IconButton
             aria-label="edit"
             size="large"
             onClick={() => {
@@ -184,6 +184,33 @@ export default function StockForm() {
         alert("Failed to delete");
       }
     }
+  };
+
+  const showMyDialog = () => {
+    return (
+      <Dialog
+        open={openMyDialog}
+        onClose={handleCloseMyDialog}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Use Google's location service?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Let Google help apps determine location. This means sending
+            anonymous location data to Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseMyDialog}>Disagree</Button>
+          <Button onClick={handleCloseMyDialog} autoFocus>
+            Agree
+          </Button>
+        </DialogActions>
+      </Dialog>
+    );
   };
 
   const showDialog = () => {
@@ -291,6 +318,7 @@ export default function StockForm() {
       />
 
       {showDialog()}
+      {showMyDialog()}
     </Box>
   );
 }
