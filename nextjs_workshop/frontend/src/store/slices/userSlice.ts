@@ -2,6 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { UserData } from "@/models/user.model";
 import build from "next/dist/build";
+import * as serverService from "@/services/serverService";
+
 
 interface SignAction {
   username: string;
@@ -46,17 +48,7 @@ export const signUp = createAsyncThunk(
   "user/signup",
   async (user: SignAction) => {
     await new Promise((resolve) => setTimeout(resolve, 300));
-    const response = await fetch("http://localhost:8081/api/v1/Auth/Register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    });
-
-    const result = await response.json();
-    if (result.result != "ok") {
-      throw new Error("Invalid username or password");
-    }
-
+    const result = 
     return result;
   }
 );
