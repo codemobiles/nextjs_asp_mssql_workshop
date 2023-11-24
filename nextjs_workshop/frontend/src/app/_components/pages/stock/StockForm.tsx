@@ -4,15 +4,11 @@ import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { useEffect } from "react";
 import { RootState, useAppDispatch } from "@/store/store";
 import { useSelector } from "react-redux";
+import { getProducts, productSelector } from "@/store/slices/productSlice";
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "firstName", headerName: "First name", width: 130 },
-];
-
-const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
+  { field: "productId", headerName: "ID", width: 70 },
+  { field: "name", headerName: "Name", width: 330 },
 ];
 
 export default function StockForm() {
@@ -22,21 +18,23 @@ export default function StockForm() {
   useEffect(() => {
     // on created
     console.log("StockForm Created");
+    dispatch(getProducts());
 
     // on destroyed
     return () => {
       console.log("StockForm Destroyed");
     };
-  }, []);
+  }, [dispatch]);
 
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div className="h-full w-full">
       <DataGrid
-        rows={rows}
+        getRowId={(row) => row.productId}
+        rows={productReducer.products}
         columns={columns}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
+            paginationModel: { page: 0, pageSize: 10 },
           },
         }}
         pageSizeOptions={[5, 10]}
