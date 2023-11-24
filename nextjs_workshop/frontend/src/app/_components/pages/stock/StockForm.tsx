@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { useEffect } from "react";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 70 },
@@ -13,6 +14,16 @@ const rows = [
 ];
 
 export default function StockForm() {
+  useEffect(() => {
+    // on created
+    console.log("StockForm Created");
+
+    // on destroyed
+    return () => {
+      console.log("StockForm Destroyed");
+    };
+  });
+
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid

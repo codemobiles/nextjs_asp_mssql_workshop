@@ -1,9 +1,18 @@
 import { ProductData } from "@/models/product.model";
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import * as serverService from "@/services/serverService";
 
 interface ProductState {
   products: ProductData[];
 }
+
+export const getProducts = createAsyncThunk(
+  "product/getProducts",
+  async (keyword?: string | undefined) => {
+    const result = await serverService.getProducts(keyword);
+    return result;
+  }
+);
 
 const initialState: ProductState = {
   products: [],
@@ -11,8 +20,13 @@ const initialState: ProductState = {
 
 const productSlice = createSlice({
   name: "product",
-  initialState: {},
+  initialState,
   reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(getProducts.fulfilled, (state, action) => {
+      state.products = action.payload;
+    });
+  },
 });
 
 export default productSlice.reducer;
