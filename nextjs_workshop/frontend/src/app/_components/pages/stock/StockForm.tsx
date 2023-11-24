@@ -1,15 +1,22 @@
 "use client";
 import * as React from "react";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import {
+  DataGrid,
+  GridColDef,
+  GridToolbarContainer,
+  GridToolbarFilterButton,
+  GridValueGetterParams,
+} from "@mui/x-data-grid";
 import { useEffect } from "react";
 import { RootState, useAppDispatch } from "@/store/store";
 import { useSelector } from "react-redux";
 import { getProducts, productSelector } from "@/store/slices/productSlice";
 import { NumericFormat } from "react-number-format";
 import dayjs from "dayjs";
-import { Typography } from "@mui/material";
+import { Fab, Link, Typography } from "@mui/material";
 import Image from "next/image";
 import { productImageURL } from "@/utils/commonUtil";
+import { Add } from "@mui/icons-material";
 const columns: GridColDef[] = [
   { field: "productId", headerName: "ID", width: 70 },
   {
@@ -23,6 +30,7 @@ const columns: GridColDef[] = [
           src={productImageURL(value)}
           width={40}
           height={40}
+          style={{ objectFit: "contain" }}
         />
       );
     },
@@ -64,6 +72,29 @@ const columns: GridColDef[] = [
 export default function StockForm() {
   const dispatch = useAppDispatch();
   const productReducer = useSelector(productSelector);
+
+  const CustomToolbar: React.FunctionComponent<{
+    setFilterButtonEl: React.Dispatch<
+      React.SetStateAction<HTMLButtonElement | null>
+    >;
+  }> = ({ setFilterButtonEl }) => (
+    <GridToolbarContainer>
+      <GridToolbarFilterButton ref={setFilterButtonEl} />
+      <Link href="/stock/add">
+        <Fab
+          color="primary"
+          aria-label="add"
+          sx={{
+            position: "absolute",
+            top: 10,
+            right: 10,
+          }}
+        >
+          <Add />
+        </Fab>
+      </Link>
+    </GridToolbarContainer>
+  );
 
   useEffect(() => {
     // on created
