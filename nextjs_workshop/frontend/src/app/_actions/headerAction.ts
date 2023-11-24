@@ -1,5 +1,5 @@
 "use server";
-import { ACCESS_TOKEN_KEY } from "@/src/utils/constant";
+import { ACCESS_TOKEN_KEY } from "@/utils/constant";
 import { cookies } from "next/headers";
 
 export async function getTokenFromCookie() {
