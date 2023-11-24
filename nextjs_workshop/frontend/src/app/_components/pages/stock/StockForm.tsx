@@ -265,7 +265,7 @@ export default function StockForm() {
         <Grid item lg={3} md={6} sm={12}>
           <StockCard
             icon={() => (
-              <Button variant="text">
+              <Button variant="text" onClick={() => setOpenMyDialog(true)}>
                 <AddShoppingCart className="text-white" fontSize="large" />
               </Button>
             )}
