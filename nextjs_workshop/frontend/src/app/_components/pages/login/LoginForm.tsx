@@ -60,7 +60,7 @@ export default function LoginForm() {
         onSubmit={handleSubmit(async (value: User) => {
           const result = await dispatch(signIn(value));
           if (result.meta.requestStatus == "fulfilled") {
-            alert("Login successuflly");
+            router.push("/stock");
           }
         })}
       >

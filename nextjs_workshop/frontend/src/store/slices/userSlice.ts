@@ -42,7 +42,9 @@ export const signUp = createAsyncThunk(
   }
 );
 
-export const signOut = createAsyncThunk("user/signOut", async () => {});
+export const signOut = createAsyncThunk("user/signOut", async () => {
+  await serverService.signOut();
+});
 
 interface UserState {
   username: string;
