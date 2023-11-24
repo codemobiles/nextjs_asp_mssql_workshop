@@ -16,7 +16,17 @@ export default function StockAddPage({}: Props) {
   });
 
   // setup react hook form
-  const { control, handleSubmit } = useForm<ProductData>();
+  const initialValue: ProductData = { name: "", price: 1500, stock: 9999 };
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ProductData>({
+    defaultValues: initialValue,
+    //@ts-ignore
+    resolver: yupResolver(formValidateSchema),
+  });
 
   return (
     <Box>
