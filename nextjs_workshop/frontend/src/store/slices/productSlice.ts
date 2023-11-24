@@ -17,7 +17,9 @@ export const getProducts = createAsyncThunk(
 
 export const deleteProduct = createAsyncThunk(
   "product/deleteProduct",
-  async () => {}
+  async (id: string) => {
+    await serverService.deleteProduct(id);
+  }
 );
 
 export const addProduct = createAsyncThunk(
