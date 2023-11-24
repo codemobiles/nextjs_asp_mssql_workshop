@@ -4,6 +4,25 @@ import fetchInterceptor from "@/utils/fetchInterceptor";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
+// GET
+export async function GET(
+  request: NextRequest,
+  context: {
+    params: {
+      route: string;
+    };
+  }
+): Promise<any> {
+  const route = context.params.route;
+
+  if (route === "signout") {
+    return signout(request);
+  } else if (route === "session") {
+    // return getSession(request);
+  }
+  return NextResponse.json({ route });
+}
+
 // POST
 export async function POST(
   request: NextRequest,
@@ -17,8 +36,6 @@ export async function POST(
   const body = await request.json();
   if (route === "signin") {
     return signin(body);
-  } else if (route === "signout") {
-    signout(request);
   }
 }
 
