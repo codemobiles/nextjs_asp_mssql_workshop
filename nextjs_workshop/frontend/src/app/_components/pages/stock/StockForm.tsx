@@ -2,6 +2,8 @@
 import * as React from "react";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 import { useEffect } from "react";
+import { RootState, useAppDispatch } from "@/store/store";
+import { useSelector } from "react-redux";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 70 },
@@ -14,6 +16,9 @@ const rows = [
 ];
 
 export default function StockForm() {
+  const dispatch = useAppDispatch();
+  const productReducer = useSelector(productSelector);
+
   useEffect(() => {
     // on created
     console.log("StockForm Created");
@@ -22,7 +27,7 @@ export default function StockForm() {
     return () => {
       console.log("StockForm Destroyed");
     };
-  });
+  }, []);
 
   return (
     <div style={{ height: 400, width: "100%" }}>
