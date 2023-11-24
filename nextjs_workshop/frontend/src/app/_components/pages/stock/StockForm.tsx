@@ -48,7 +48,7 @@ import { useRouter } from "next/navigation";
 import { userSelector } from "@/store/slices/userSlice";
 import { ProductData } from "@/models/product.model";
 import { useState } from "react";
-import StockCard from "../../common/StockCard";
+import StockCard from "@/_components/common/StockCard";
 
 export default function StockForm() {
   const productReducer = useSelector(productSelector);
