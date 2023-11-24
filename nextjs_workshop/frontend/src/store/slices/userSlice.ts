@@ -27,17 +27,7 @@ export const signIn = createAsyncThunk(
   "user/signin",
   async (user: SignAction) => {
     await new Promise((resolve) => setTimeout(resolve, 300));
-    const response = await fetch("http://localhost:3000/api/auth/signin", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    });
-
-    const result = await response.json();
-    if (!result.token) {
-      throw new Error("Invalid username or password");
-    }
-
+    const result = await serverService.signIn(user);
     return result;
   }
 );
