@@ -17,7 +17,22 @@ export const getProducts = createAsyncThunk(
 
 export const addProduct = createAsyncThunk(
   "product/addProduct",
-  async (data: ProductData) => {}
+  async (values: ProductData) => {
+    try {
+      let data = new FormData();
+      data.append("name", values.name);
+      data.append("price", String(values.price));
+      data.append("stock", String(values.stock));
+      if (values.file) {
+        data.append("file", values.file);
+      }
+      const response = await serverService.addProduct(data);
+      return response;
+    } catch (e) {
+      console.log(JSON.stringify(e));
+      return null;
+    }
+  }
 );
 
 const initialState: ProductState = {
