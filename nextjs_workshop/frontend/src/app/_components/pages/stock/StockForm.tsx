@@ -1,7 +1,31 @@
-import React from "react";
+"use client";
+import * as React from "react";
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 
-type Props = {};
+const columns: GridColDef[] = [
+  { field: "id", headerName: "ID", width: 70 },
+  { field: "firstName", headerName: "First name", width: 130 },
+];
 
-export default function StockForm({}: Props) {
-  return <div>StockForm</div>;
+const rows = [
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
+  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
+];
+
+export default function StockForm() {
+  return (
+    <div style={{ height: 400, width: "100%" }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: { page: 0, pageSize: 5 },
+          },
+        }}
+        pageSizeOptions={[5, 10]}
+        checkboxSelection
+      />
+    </div>
+  );
 }
