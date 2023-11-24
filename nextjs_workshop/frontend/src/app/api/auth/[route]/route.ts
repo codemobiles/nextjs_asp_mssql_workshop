@@ -1,3 +1,4 @@
+import { signOut } from "@/services/serverService";
 import { ACCESS_TOKEN_KEY } from "@/utils/constant";
 import fetchInterceptor from "@/utils/fetchInterceptor";
 import { cookies } from "next/headers";
@@ -16,6 +17,8 @@ export async function POST(
   const body = await request.json();
   if (route === "signin") {
     return signin(body);
+  } else if (route === "signout") {
+    signout(request);
   }
 }
 
