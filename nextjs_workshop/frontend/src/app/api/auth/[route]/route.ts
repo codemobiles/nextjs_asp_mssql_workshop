@@ -23,18 +23,6 @@ async function signin(body: {
   username: string;
   password: string;
 }): Promise<any> {
-  // try {
-  //   const { username, password } = body;
-
-  //   if (username == "admin" && password == "1234") {
-  //     return NextResponse.json({ result: "ok", token: "1234" });
-  //   } else {
-  //     return NextResponse.json({ result: "nok" });
-  //   }
-  // } catch (error: any) {
-  //   return NextResponse.json({ result: "nok" });
-  // }
-
   try {
     const response = await fetchInterceptor.post(`/auth/login`, body);
     const { token } = response;
