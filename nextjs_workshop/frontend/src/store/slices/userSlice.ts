@@ -46,6 +46,12 @@ export const signOut = createAsyncThunk("user/signOut", async () => {
   await serverService.signOut();
 });
 
+export const getSession = createAsyncThunk("user/fetchSession", async () => {
+  // await new Promise((resolve) => setTimeout(resolve, 300));
+  const response = await serverService.getSession();
+  return response;
+});
+
 interface UserState {
   username: string;
   error?: string;
