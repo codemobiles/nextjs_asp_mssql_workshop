@@ -118,7 +118,7 @@ export default function StockForm() {
       width: 120,
       renderCell: ({ row }: GridRenderCellParams<any>) => (
         <Stack direction="row">
-          <IconButton
+          <IconButton 
             aria-label="edit"
             size="large"
             onClick={() => {
