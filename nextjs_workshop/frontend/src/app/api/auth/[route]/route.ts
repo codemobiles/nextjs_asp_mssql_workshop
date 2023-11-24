@@ -35,18 +35,18 @@ async function signin(body: {
   //   return NextResponse.json({ result: "nok" });
   // }
 
+  try {
+    const response = await fetchInterceptor.post(`/auth/login`, body);
+    const { token } = response;
+    console.log("Debug Token: " + token);
+    cookies().set(ACCESS_TOKEN_KEY, token, {
+      secure: true,
+      sameSite: "strict",
+      path: "/",
+    });
 
-   try {
-     const response = await fetchInterceptor.post(`/auth/login`, body);
-     const { token } = response;
-     cookies().set(ACCESS_TOKEN_KEY, token, {
-       secure: true,
-       sameSite: "strict",
-       path: "/",
-     });
-
-     return NextResponse.json(response);
-   } catch (error: any) {
-     return NextResponse.json({ result: "nok" });
-   }
+    return NextResponse.json(response);
+  } catch (error: any) {
+    return NextResponse.json({ result: "nok" });
+  }
 }
