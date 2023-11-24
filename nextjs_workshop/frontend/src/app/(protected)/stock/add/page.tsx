@@ -41,8 +41,8 @@ export default function StockAddPage({}: Props) {
           render={({ field }) => (
             <TextField
               {...field}
-              error
-              helperText="Name is required"
+              error={Boolean(errors.name?.message)}
+              helperText={errors.name?.message}
               fullWidth
               label="Name"
               sx={{ mt: 1 }}
