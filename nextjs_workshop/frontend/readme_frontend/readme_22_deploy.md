@@ -7,5 +7,7 @@
 
 ### Standalone
 
+- update nextjs.config.ts - output: "standalone",
 - yarn build
-- yarn start
+- copy .next/standalone to server
+- node standalone/server.js
