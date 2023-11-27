@@ -59,7 +59,7 @@ const ReportForm = () => {
       {
         label: "Revenue 2022",
         fill: true,
-        lineTension: 0.5, // line curve
+        lineTension: 0.4, // line curve
         backgroundColor: [
           "rgba(54, 162, 235, 0.2)",
           "rgba(255, 99, 132, 0.2)",
