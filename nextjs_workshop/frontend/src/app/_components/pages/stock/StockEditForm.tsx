@@ -27,7 +27,7 @@ type Props = {
 export default function StockEditForm({ product }: Props) {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const initialValue: ProductData = { name: "", price: 1500, stock: 9999 };
+
   const {
     control,
     handleSubmit,
@@ -35,7 +35,7 @@ export default function StockEditForm({ product }: Props) {
     watch,
     formState: { errors },
   } = useForm<ProductData>({
-    defaultValues: initialValue,
+    defaultValues: product,
     //@ts-ignore
     resolver: yupResolver(formValidateSchema),
   });
