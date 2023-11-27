@@ -1,3 +1,4 @@
+import ProductCard from "@/app/_components/common/ProductCard";
 import { ProductData } from "@/models/product.model";
 import fetchInterceptor from "@/utils/fetchInterceptor";
 import { Box } from "@mui/material";
