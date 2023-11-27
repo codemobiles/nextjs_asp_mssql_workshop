@@ -67,14 +67,14 @@ export default function StockForm() {
       field: "image",
       headerName: "Image",
       width: 70,
-      renderCell: ({ value }: GridRenderCellParams<String>) => (
+      renderCell: ({ row }: GridRenderCellParams<ProductData>) => (
         <Zoom>
           <Image
-            key={value}
+            key={row.productId}
             height={500}
             width={500}
             alt="product image"
-            src={productImageURL(value)}
+            src={productImageURL(`${row.image}?created=${row.createdAt}`)}
             style={{
               width: 70,
               height: 70,
