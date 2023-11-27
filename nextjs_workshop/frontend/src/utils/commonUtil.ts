@@ -20,3 +20,21 @@ export const getBase64 = (file: any): Promise<string | ArrayBuffer | null> => {
     reader.onerror = (error) => reject(error);
   });
 };
+
+export const labels = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+];
+
+export function getRandomInt(): any {
+  let randoms = [];
+  for (let index = 0; index <= labels.length; index++) {
+    randoms.push(Math.floor(Math.random() * (50000 - 5 + 1)) + 5);
+  }
+  return randoms;
+}
