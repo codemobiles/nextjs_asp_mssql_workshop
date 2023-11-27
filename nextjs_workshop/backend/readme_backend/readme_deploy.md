@@ -37,7 +37,7 @@ dotnet publish -c Release -o ./publish /p:UseAppHost=true
 export ASPNETCORE_URLS=http://+:8081
 
 ### for win
-
+ 
 set ASPNETCORE_URLS=http://+:8081
 
 # run the execution file
