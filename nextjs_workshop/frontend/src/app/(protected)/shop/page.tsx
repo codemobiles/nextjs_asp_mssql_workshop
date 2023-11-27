@@ -1,30 +1,17 @@
-// import fetchInterceptor from "@/utils/fetchInterceptor";
-// import React from "react";
-
-// type Props = {};
-
-// export default async function ShopPage({}: Props) {
-//   const products = await fetchInterceptor.get("/product");
-
-//   return <div>ShopPage: {JSON.stringify(products)}</div>;
-// }
-
-"use client";
 import fetchInterceptor from "@/utils/fetchInterceptor";
-import React, { useEffect } from "react";
+import { Box } from "@mui/material";
+import React from "react";
 
 type Props = {};
 
-export default function ShopPage({}: Props) {
-  const [products, setProducts] = React.useState([]);
-  useEffect(() => {
-    load();
-  });
+export default async function ShopPage({}: Props) {
+  const products = await fetchInterceptor.get("/product");
 
-  async function load() {
-    const result = await fetchInterceptor.get("/product");
-    setProducts(result);
-  }
-
-  return <div>ShopPage: {JSON.stringify(products)}</div>;
+  return (
+    <Box className="grid gap-2 grid-cols-fluid w-full">
+      {products.map((p) => (
+        <ProductCard key={p.productId} product={p} />
+      ))}
+    </Box>
+  );
 }
