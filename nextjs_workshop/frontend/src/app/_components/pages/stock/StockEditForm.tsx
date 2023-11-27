@@ -69,7 +69,7 @@ export default function StockEditForm({ product }: Props) {
       <Card>
         <CardContent className="p-8">
           <Typography gutterBottom variant="h3">
-            Create Product
+            Edit Product
           </Typography>
 
           <Controller
@@ -144,7 +144,7 @@ export default function StockEditForm({ product }: Props) {
             type="submit"
             className="mr-2"
           >
-            Create
+            Save
           </Button>
           <Button
             fullWidth
