@@ -1,9 +1,10 @@
-import React from 'react'
+import fetchInterceptor from "@/utils/fetchInterceptor";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 export default function ShopPage({}: Props) {
-  return (
-    <div>ShopPage</div>
-  )
+  const products = fetchInterceptor.get("/product");
+
+  return <div>ShopPage</div>;
 }
