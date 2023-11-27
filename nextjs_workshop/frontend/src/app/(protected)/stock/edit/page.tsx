@@ -1,3 +1,4 @@
+import StockEditForm from "@/app/_components/pages/stock/StockEditForm";
 import { ProductData } from "@/models/product.model";
 import { doGetStockById } from "@/services/serverService";
 import React from "react";
@@ -10,5 +11,5 @@ export default async function EditPage({ searchParams }: Props) {
   if (searchParams.id) {
     product = await doGetStockById(searchParams.id);
   }
-  return <div>EditPage {JSON.stringify(product)}</div>;
+  return <StockEditForm product={product} />;
 }
