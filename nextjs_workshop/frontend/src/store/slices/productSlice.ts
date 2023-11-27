@@ -42,7 +42,22 @@ export const addProduct = createAsyncThunk(
   }
 );
 
-export const editProduct = async (product: ProductData) => {};
+export const editProduct = createAsyncThunk(
+  "product/editProduct",
+  async (values: ProductData) => {
+    let data = new FormData();
+    data.append("productId", String(values.productId));
+    data.append("name", values.name);
+    data.append("price", String(values.price));
+    data.append("stock", String(values.stock));
+
+    if (values.file) {
+      data.append("file", values.file);
+    }
+    const response = serverService.editProduct(data);
+    return response;
+  }
+);
 
 const initialState: ProductState = {
   products: [],
