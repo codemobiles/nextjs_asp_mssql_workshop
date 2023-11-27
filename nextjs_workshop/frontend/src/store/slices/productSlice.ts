@@ -42,6 +42,8 @@ export const addProduct = createAsyncThunk(
   }
 );
 
+export const editProduct = async (product: ProductData) => {};
+
 const initialState: ProductState = {
   products: [],
 };
