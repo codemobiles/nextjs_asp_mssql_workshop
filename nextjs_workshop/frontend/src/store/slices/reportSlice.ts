@@ -1,3 +1,4 @@
+import { getRandomInt } from "@/utils/commonUtil";
 import { createSlice } from "@reduxjs/toolkit";
 import { ChartType } from "chart.js";
 
@@ -15,8 +16,14 @@ const initialState: ReportState = {
 
 const reportSlice = createSlice({
   name: "report",
-  reducers: {},
+  reducers: {
+    refresh: (state) => {
+      state.chartData1 = getRandomInt();
+      state.chartData2 = getRandomInt();
+    },
+  },
   initialState,
 });
 
 export default reportSlice.reducer;
+export const { refresh } = reportSlice.actions;

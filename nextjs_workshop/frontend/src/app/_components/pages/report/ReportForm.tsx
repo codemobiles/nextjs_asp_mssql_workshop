@@ -6,10 +6,7 @@ import React, { useEffect, useState } from "react";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
 import { ChartType } from "chart.js/auto";
-
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-
-
+import { labels, getRandomInt } from "@/utils/commonUtil";
 
 const chartOption: any = {
   plugins: {
