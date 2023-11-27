@@ -20,7 +20,11 @@ const formValidateSchema = Yup.object().shape({
   stock: Yup.number().min(100, "Number must be greater than 100"),
 });
 
-export default function StockEditForm() {
+type Props = {
+  product: ProductData;
+};
+
+export default function StockEditForm({ product }: Props) {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const initialValue: ProductData = { name: "", price: 1500, stock: 9999 };
