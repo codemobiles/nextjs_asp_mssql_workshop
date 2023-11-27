@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import React, { useEffect, useState } from "react";
 import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
+import { ChartType } from "chart.js/auto";
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
@@ -46,7 +47,7 @@ const chartOption: any = {
 };
 
 const ReportForm = () => {
-  const [chartType, setChartType] = useState<string>("bar");
+  const [chartType, setChartType] = useState<ChartType>("bar");
   const [chartData1, setChartData1] = useState([]);
   const [chartData2, setChartData2] = useState([]);
 
@@ -151,15 +152,14 @@ const ReportForm = () => {
         <RefreshIcon />
       </IconButton>
       <Box sx={{ height: 500 }}>
-        {chartType === "line" && (
-          <Chart type={"line"} data={data} width="100%" options={chartOption} />
-        )}
-        {chartType === "pie" && (
-          <Chart type="pie" data={data} width="100%" options={chartOption} />
-        )}
-        {chartType === "bar" && (
-          <Chart type="bar" data={data} width="100%" options={chartOption} />
-        )}
+        {
+          <Chart
+            type={chartType}
+            data={data}
+            width="100%"
+            options={chartOption}
+          />
+        }
       </Box>
     </Paper>
   );
