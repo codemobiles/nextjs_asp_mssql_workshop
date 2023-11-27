@@ -12,7 +12,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { ProductData } from "@/models/product.model";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { addProduct } from "@/store/slices/productSlice";
+import { addProduct, editProduct } from "@/store/slices/productSlice";
+import { productImageURL } from "@/utils/commonUtil";
 
 const formValidateSchema = Yup.object().shape({
   name: Yup.string().required("Name is required").trim(),
@@ -41,11 +42,11 @@ export default function StockEditForm({ product }: Props) {
   });
 
   const onSubmit = async (values: ProductData) => {
-    const result = await dispatch(addProduct(values));
+    const result = await dispatch(editProduct(values));
     if (result.meta.requestStatus == "fulfilled") {
       router.push("/stock");
     } else {
-      alert("Add failed");
+      alert("Edit failed");
     }
   };
 
@@ -57,6 +58,15 @@ export default function StockEditForm({ product }: Props) {
         <Image
           alt=""
           src={watchPreviewImage.toString()}
+          width={100}
+          height={100}
+        />
+      );
+    } else {
+      return (
+        <Image
+          alt=""
+          src={productImageURL(product.image)}
           width={100}
           height={100}
         />
