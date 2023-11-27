@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/0500e71c-1191-4c85-9d27-98a969687e62.png",
+      "PackagePath": "staticwebassets/images/0500e71c-1191-4c85-9d27-98a969687e62.png"
+    },
+    {
       "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/118d420c-5b23-40e3-b897-fdf2e79a3441.JPG",
       "PackagePath": "staticwebassets/images/118d420c-5b23-40e3-b897-fdf2e79a3441.JPG"
     },
