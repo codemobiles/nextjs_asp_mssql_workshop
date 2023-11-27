@@ -3,8 +3,8 @@ import React from "react";
 
 type Props = {};
 
-export default function ShopPage({}: Props) {
-  const products = fetchInterceptor.get("/product");
+export default async function ShopPage({}: Props) {
+  const products = await fetchInterceptor.get("/product");
 
-  return <div>ShopPage</div>;
+  return <div>ShopPage: {JSON.stringify(products)}</div>;
 }
