@@ -21,9 +21,12 @@ const reportSlice = createSlice({
       state.chartData1 = getRandomInt();
       state.chartData2 = getRandomInt();
     },
+    setChartType: (state, action) => {
+      state.chartType = action.payload;
+    },
   },
   initialState,
 });
 
 export default reportSlice.reducer;
-export const { refresh } = reportSlice.actions;
+export const { refresh, setChartType } = reportSlice.actions;
