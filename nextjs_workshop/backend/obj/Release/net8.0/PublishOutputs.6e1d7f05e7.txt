@@ -1,4 +1,5 @@
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/backend
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/publish/web.config
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/web.config
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/appsettings.Development.json
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/appsettings.json
@@ -6,6 +7,10 @@
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/appsettings.json
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/backend.deps.json
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/backend.runtimeconfig.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/publish/appsettings.Development.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/publish/appsettings.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/publish/backend.deps.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/publish/publish/backend.runtimeconfig.json
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/backend.dll
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/backend.runtimeconfig.json
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/publish/backend.pdb

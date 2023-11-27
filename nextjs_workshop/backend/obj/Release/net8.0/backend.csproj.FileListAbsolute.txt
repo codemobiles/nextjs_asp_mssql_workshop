@@ -161,3 +161,8 @@
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/appsettings.json
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/backend.deps.json
 /Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/backend.runtimeconfig.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/publish/web.config
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/publish/appsettings.Development.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/publish/appsettings.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/publish/backend.deps.json
+/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/bin/Release/net8.0/publish/publish/backend.runtimeconfig.json
