@@ -12,10 +12,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace backend.Controllers.v2
 {
+    [ApiVersion("2.0")]
     [ApiController]
     // [Authorize(Roles = "Admin")] // JWT Claim("role")
     [Authorize]
-    [Route("api/v2/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProductController : ControllerBase
     {
 

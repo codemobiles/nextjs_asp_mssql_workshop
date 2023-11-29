@@ -17,6 +17,7 @@ namespace backend.Installers
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CodeMobiles .NETCore", Version = "1.0" });
 
 
+
                 // Set the comments path for the Swagger JSON and UI.
                 // must configure in .csproj file in part of <GenerateDocumentationFile>true</GenerateDocumentationFile>
                 // how to comment - check out in AuthController <summary>....
