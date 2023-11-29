@@ -71,7 +71,7 @@ const Header = ({ handleDrawerOpen, open }: Props) => {
         <Box sx={{ flexGrow: 1 }} />
 
         <Typography variant="h6" noWrap component="div" fontWeight="300">
-          Updated 2023
+          Updated 2024
         </Typography>
         <Box sx={{ display: { xs: "none", md: "flex" } }}>
           <IconButton

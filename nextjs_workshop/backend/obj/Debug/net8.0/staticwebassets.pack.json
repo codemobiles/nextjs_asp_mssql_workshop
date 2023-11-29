@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets/images/ac48da1a-89a4-4359-8794-f4e0be76ac2c.png"
     },
     {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/bd98197d-bd8f-4247-9be6-36817bd65e3b.JPG",
+      "PackagePath": "staticwebassets/images/bd98197d-bd8f-4247-9be6-36817bd65e3b.JPG"
+    },
+    {
       "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/bda5417b-650b-41b2-b7f6-0e432974b237.png",
       "PackagePath": "staticwebassets/images/bda5417b-650b-41b2-b7f6-0e432974b237.png"
     },
@@ -107,6 +111,10 @@
     {
       "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/e8c9d8de-5296-4474-b0e4-5bff3b96087e.JPG",
       "PackagePath": "staticwebassets/images/e8c9d8de-5296-4474-b0e4-5bff3b96087e.JPG"
+    },
+    {
+      "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/ef3419a8-8c92-4343-a06c-e2b23be03f1b.png",
+      "PackagePath": "staticwebassets/images/ef3419a8-8c92-4343-a06c-e2b23be03f1b.png"
     },
     {
       "Id": "/Users/chaiyasittayabovorn/Desktop/tmp/nextjs_asp_mssql_workshop/nextjs_workshop/backend/wwwroot/images/f8b53da9-f740-4ccf-9fea-f0eae92fe96a.JPG",
