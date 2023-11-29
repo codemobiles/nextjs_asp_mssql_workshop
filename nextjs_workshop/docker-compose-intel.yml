@@ -67,8 +67,7 @@ services:
       - mynetwork
   frontend:
     build: frontend/
-    image: frontend:1.0
-    command: npm run production
+    image: frontend:1.0    
     container_name: frontend
     ports:
       - 80:3000

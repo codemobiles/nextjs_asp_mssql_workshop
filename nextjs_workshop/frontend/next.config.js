@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: "localhost",
         pathname: "**",
       },
+      {
+        protocol: "http",
+        hostname: "backend",
+        pathname: "**",
+      },
     ],
     minimumCacheTTL: 0,
   },
