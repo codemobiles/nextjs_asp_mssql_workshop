@@ -2,6 +2,9 @@
 
 import * as React from "react";
 import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import { useSelector } from "react-redux";
+import { RootState, useAppDispatch } from "@/store/store";
+import { load } from "@/store/slices/appSlice";
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 70 },
@@ -37,20 +40,15 @@ const rows = [
 ];
 
 export default function DataTable() {
-  const [products, setProducts] = React.useState<any[]>([]);
+  const appReducer = useSelector((state: RootState) => state.appReducer);
+  const dispatch = useAppDispatch();
   React.useEffect(() => {
-    load();
-  }, []);
-
-  const load = async () => {
-    const result = await fetch("https://jsonplaceholder.typicode.com/comments");
-    const json = await result.json();
-    setProducts(json);
-  };
+    dispatch(load());
+  }, [dispatch]);
 
   return (
     <div style={{ height: 400, width: "100%" }}>
-      {JSON.stringify(products)}
+      {JSON.stringify(appReducer.products)}
       <DataGrid
         rows={rows}
         columns={columns}
