@@ -14,11 +14,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 //using Controllers.Models;
 
-namespace Controllers.Controllers
+namespace backend.Controllers.v1
 {
-    /// <summary>
-    /// AuthController
-    /// </summary>
+
     [ApiVersion("1.0")]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]

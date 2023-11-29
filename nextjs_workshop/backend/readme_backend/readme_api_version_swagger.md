@@ -17,6 +17,14 @@
   var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
   c.IncludeXmlComments(xmlPath);
 
+# Add ControllerInstaller.cs
+
+- This will handle vesion based on controller namespace
+
+```cs
+c.Conventions.Add(new ApiExplorerGroupPerVersionConvention())
+```
+
 - Add show jwt authorization in swagger ui form
 
 # Add XML comments in .csproj file (otherwise will cause error exception in SwaggerInstaller when load xml file)
