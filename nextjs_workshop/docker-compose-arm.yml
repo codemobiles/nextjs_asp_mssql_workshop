@@ -67,6 +67,7 @@ services:
     build: backend/
     image: backend:1.0
     container_name: backend
+    user: root
     volumes:
         - cmdotnet-volume:/app/wwwroot
     ports:
