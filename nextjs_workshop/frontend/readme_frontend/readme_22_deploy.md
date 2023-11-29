@@ -8,6 +8,6 @@
 ### Standalone
 
 - update nextjs.config.ts - output: "standalone",
-- yarn build
-- copy .next/standalone to server
-- node standalone/server.js
+- yarn build && cp -R public .next/standalone/ && cp -R .next/static .next/standalone/.next/
+- node .next/standalone/server.js
+- you can copy .next/standalone folder to server for deployement
