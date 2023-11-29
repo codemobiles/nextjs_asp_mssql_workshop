@@ -27,12 +27,13 @@ builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterAss
     .Where(t => t.Name.EndsWith("Repository")) // Suffix Naming of AuthRepository, ProductRepository
     .AsImplementedInterfaces());
 
-
+// Write log file
+builder.Host.ConfigureLogging((hostingContext, builder) => builder.AddFile("Logs/cmpos_api-{Date}.txt", LogLevel.Debug, null, false, null, null));
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment() || true)
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
