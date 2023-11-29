@@ -21,9 +21,11 @@ namespace backend.Controllers.v1
 
         private readonly IProductRepository _productRepository;
         public IMapper _mapper { get; }
+        private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductRepository productRepository, IMapper mapper)
+        public ProductController(ILogger<ProductController> logger, IProductRepository productRepository, IMapper mapper)
         {
+            this._logger = logger;
 
             _productRepository = productRepository;
             _mapper = mapper;
