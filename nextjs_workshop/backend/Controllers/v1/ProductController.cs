@@ -34,6 +34,7 @@ namespace backend.Controllers.v1
         [HttpGet("")]
         public ActionResult<IEnumerable<Product>> GetProducts()
         {
+            _logger.LogInformation("Calling GetProducts");
             var result = _productRepository.GetProducts();
             return Ok(result);
         }

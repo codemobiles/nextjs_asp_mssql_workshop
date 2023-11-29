@@ -13,13 +13,7 @@ namespace backend.Installers
                options.AddPolicy("AllowSpecificOrigins", builder =>
                {
                    builder.WithOrigins(
-                       "https://www.w3schools.com",
-                       "http://example.com",
-                       "http://localhost:4200",
-                       "https://localhost:4200",
-                       "http://localhost:1152",
-                       "http://192.168.99.100:1152",
-                       "https://localhost:8081",
+                       "http://localhost:3000",
                        "http://localhost:8082"
                        )
                    .AllowAnyHeader()
