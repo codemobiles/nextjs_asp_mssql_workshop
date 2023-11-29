@@ -1,0 +1,62 @@
+# readme... backend/frontend
+
+- nextjs
+- .net
+- client/server component
+- 'use client'
+- 'use server'
+- page, layout, error, loading
+- middleware in nextjs
+- fetch
+- cookie
+- .env.development .env.production
+- server action
+- page vs route handler (next api)
+- folder name : 
+  - /dashboard/page.tsx (static route)
+  - /product/[param] (dynamic route)
+  - [...slug]
+  - [[...slug]]
+  - () : group route
+  - _folder : hidden folder
+- mui - theme, font, sx, data table, override style
+- Next Image (bunddle, remote )
+- alias import @ (tsconfig)
+- next.config.ts
+- yarn dev, build, start
+- tailwind: setup, conflict resolve mui
+- react hook form
+- yup - form validation
+- tsrfc
+- redux: store, slice, reducer, useSelector, dispatch 
+- redux: <Provider store={store}></Provider> in layout.tsx
+
+# .NET 
+- .NET Program.cs : add Service, middleware (use)
+- Installer
+- Autofactory - auto inject dependency
+- Controller
+- dotnet new webapi --use-controllers -o <project-name>
+- appsetting... === .env
+- launchSettings.json
+- EF Framework: Scafold 
+- Logging
+- Versionijng
+- CORS
+- JWT: Authentication vs Authroization
+- Swagger
+
+# Docker 
+- docker pull, 
+- docker ps 
+- docker ps -a
+- docker build -t <image-name> . 
+- docker run --rm --name <container-name> <image-name>
+- docker-compose
+- Dockerfile
+- docker network 
+- docker volume
+
+
+
+
