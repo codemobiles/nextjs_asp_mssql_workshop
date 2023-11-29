@@ -19,8 +19,9 @@ namespace Controllers.Controllers
     /// <summary>
     /// AuthController
     /// </summary>
-    [Route("api/v1/[controller]")]
+    [ApiVersion("1.0")]
     [ApiController]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AuthController : ControllerBase
     {
 
