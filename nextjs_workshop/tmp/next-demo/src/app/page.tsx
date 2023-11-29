@@ -37,6 +37,24 @@ const rows = [
 ];
 
 export default function DataTable() {
+  const [products, setProducts] = React.useState([]);
+  React.useEffect(() => {
+    load();
+  }, []);
+
+  const load = async () => {
+    const result = await fetch(
+      "https://jsonplaceholder.typicode.com/comments",
+      {
+        method: "GET",
+      }
+    );
+    debugger;
+    const json = await result.json();
+    setProducts(json);
+    console.log(JSON.stringify(products));
+  };
+
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
