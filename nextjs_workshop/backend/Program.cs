@@ -36,7 +36,11 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment() || true)
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "API V2");
+    });
 }
 
 app.UseStaticFiles();

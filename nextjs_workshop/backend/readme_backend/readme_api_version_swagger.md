@@ -8,7 +8,12 @@
 
 - dotnet add package Microsoft.AspNetCore.Mvc.Versioning
 - dotnet add package Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer
-- add VersioningInstaller.cs
+- add VersioningInstaller.cs and Make sure define SwaggerDoc every versions
+
+```cs
+c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CodeMobiles .NETCore", Version = "1.0" });
+c.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CodeMobiles .NETCore", Version = "2.0" });
+```
 
 # Add SwaggerInstaller
 
@@ -23,6 +28,16 @@
 
 ```cs
 c.Conventions.Add(new ApiExplorerGroupPerVersionConvention())
+```
+
+# Add more endpoint in Program.cs (This will make the right version filter to show more versions)
+
+```cs
+app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "CodeMobile API V1");
+        c.SwaggerEndpoint("/swagger/v2/swagger.json", "CodeMobile API V2");
+    });
 ```
 
 - Add show jwt authorization in swagger ui form

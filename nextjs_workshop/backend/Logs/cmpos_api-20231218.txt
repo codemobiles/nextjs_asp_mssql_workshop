@@ -1,0 +1,144 @@
+2023-12-18T14:07:51.2633570+07:00  [DBG] Connection id ""0HMVPGF2KED1P"" accepted. (b16f4713)
+2023-12-18T14:07:51.2668360+07:00  [DBG] Connection id ""0HMVPGF2KED1P"" started. (1426b994)
+2023-12-18T14:07:51.2790920+07:00 0HMVPGF2KED1P:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - "application/json" null (d509f86a)
+2023-12-18T14:07:51.2842870+07:00 0HMVPGF2KED1P:00000001 [DBG] 1 candidate(s) found for the request path '"/api/v1/auth/gesession"' (9406aaa8)
+2023-12-18T14:07:51.2887490+07:00 0HMVPGF2KED1P:00000001 [DBG] Endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' with route pattern '"api/v{version:apiVersion}/Auth/GeSession"' is valid for the request path '"/api/v1/auth/gesession"' (430aaaf2)
+2023-12-18T14:07:51.2922610+07:00 0HMVPGF2KED1P:00000001 [DBG] Request matched endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' (cbf60c4b)
+2023-12-18T14:07:51.2979920+07:00 0HMVPGF2KED1P:00000001 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:07:51.2980020+07:00 0HMVPGF2KED1P:00000001 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:07:51.3263130+07:00 0HMVPGF2KED1P:00000001 [INF] Failed to validate the token. (616bef97)
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2023-12-18T14:07:51.3298210+07:00 0HMVPGF2KED1P:00000001 [INF] "Bearer" was not authenticated. Failure message: "IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'." (48071232)
+2023-12-18T14:07:51.3375260+07:00 0HMVPGF2KED1P:00000001 [DBG] Policy authentication schemes "" did not succeed (85bbf74d)
+2023-12-18T14:07:51.3419350+07:00 0HMVPGF2KED1P:00000001 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user." (92d7f7d3)
+2023-12-18T14:07:51.3520570+07:00 0HMVPGF2KED1P:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2023-12-18T14:07:51.3521450+07:00 0HMVPGF2KED1P:00000001 [DBG] Connection id ""0HMVPGF2KED1P"" completed keep alive response. (9784cde9)
+2023-12-18T14:07:51.3523600+07:00 0HMVPGF2KED1P:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - 401 0 null 74.3171ms (74253ad3)
+2023-12-18T14:07:51.4108830+07:00 0HMVPGF2KED1P:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - "application/json" null (d509f86a)
+2023-12-18T14:07:51.4109180+07:00 0HMVPGF2KED1P:00000002 [DBG] 1 candidate(s) found for the request path '"/api/v1/auth/gesession"' (9406aaa8)
+2023-12-18T14:07:51.4109380+07:00 0HMVPGF2KED1P:00000002 [DBG] Endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' with route pattern '"api/v{version:apiVersion}/Auth/GeSession"' is valid for the request path '"/api/v1/auth/gesession"' (430aaaf2)
+2023-12-18T14:07:51.4109500+07:00 0HMVPGF2KED1P:00000002 [DBG] Request matched endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' (cbf60c4b)
+2023-12-18T14:07:51.4110420+07:00 0HMVPGF2KED1P:00000002 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:07:51.4110720+07:00 0HMVPGF2KED1P:00000002 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:07:51.4114330+07:00 0HMVPGF2KED1P:00000002 [INF] Failed to validate the token. (616bef97)
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2023-12-18T14:07:51.4114500+07:00 0HMVPGF2KED1P:00000002 [INF] "Bearer" was not authenticated. Failure message: "IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'." (48071232)
+2023-12-18T14:07:51.4115010+07:00 0HMVPGF2KED1P:00000002 [DBG] Policy authentication schemes "" did not succeed (85bbf74d)
+2023-12-18T14:07:51.4115240+07:00 0HMVPGF2KED1P:00000002 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user." (92d7f7d3)
+2023-12-18T14:07:51.4118730+07:00 0HMVPGF2KED1P:00000002 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2023-12-18T14:07:51.4120940+07:00 0HMVPGF2KED1P:00000002 [DBG] Connection id ""0HMVPGF2KED1P"" completed keep alive response. (9784cde9)
+2023-12-18T14:07:51.4121240+07:00 0HMVPGF2KED1P:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - 401 0 null 1.2423ms (74253ad3)
+2023-12-18T14:07:51.4259510+07:00 0HMVPGF2KED1P:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - "application/json" null (d509f86a)
+2023-12-18T14:07:51.4259890+07:00 0HMVPGF2KED1P:00000003 [DBG] 1 candidate(s) found for the request path '"/api/v1/auth/gesession"' (9406aaa8)
+2023-12-18T14:07:51.4260050+07:00 0HMVPGF2KED1P:00000003 [DBG] Endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' with route pattern '"api/v{version:apiVersion}/Auth/GeSession"' is valid for the request path '"/api/v1/auth/gesession"' (430aaaf2)
+2023-12-18T14:07:51.4260160+07:00 0HMVPGF2KED1P:00000003 [DBG] Request matched endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' (cbf60c4b)
+2023-12-18T14:07:51.4260570+07:00 0HMVPGF2KED1P:00000003 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:07:51.4260580+07:00 0HMVPGF2KED1P:00000003 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:07:51.4264110+07:00 0HMVPGF2KED1P:00000003 [INF] Failed to validate the token. (616bef97)
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2023-12-18T14:07:51.4264310+07:00 0HMVPGF2KED1P:00000003 [INF] "Bearer" was not authenticated. Failure message: "IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'." (48071232)
+2023-12-18T14:07:51.4264770+07:00 0HMVPGF2KED1P:00000003 [DBG] Policy authentication schemes "" did not succeed (85bbf74d)
+2023-12-18T14:07:51.4264960+07:00 0HMVPGF2KED1P:00000003 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user." (92d7f7d3)
+2023-12-18T14:07:51.4265270+07:00 0HMVPGF2KED1P:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2023-12-18T14:07:51.4265520+07:00 0HMVPGF2KED1P:00000003 [DBG] Connection id ""0HMVPGF2KED1P"" completed keep alive response. (9784cde9)
+2023-12-18T14:07:51.4265670+07:00 0HMVPGF2KED1P:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - 401 0 null 0.6159ms (74253ad3)
+2023-12-18T14:07:56.2581410+07:00  [DBG] Connection id ""0HMVPGF2KED1P"" received FIN. (acf58720)
+2023-12-18T14:07:56.2582040+07:00  [DBG] Connection id ""0HMVPGF2KED1P"" disconnecting. (b29b9868)
+2023-12-18T14:07:56.2582200+07:00  [DBG] Connection id ""0HMVPGF2KED1P"" stopped. (056149f8)
+2023-12-18T14:07:56.2582750+07:00  [DBG] Connection id ""0HMVPGF2KED1P"" sending FIN because: ""The Socket transport's send loop completed gracefully."" (59510695)
+2023-12-18T14:08:37.9458050+07:00  [DBG] Connection id ""0HMVPGF2KED1Q"" accepted. (b16f4713)
+2023-12-18T14:08:37.9461190+07:00  [DBG] Connection id ""0HMVPGF2KED1Q"" started. (1426b994)
+2023-12-18T14:08:37.9472350+07:00 0HMVPGF2KED1Q:00000001 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - "application/json" null (d509f86a)
+2023-12-18T14:08:37.9474930+07:00 0HMVPGF2KED1Q:00000001 [DBG] 1 candidate(s) found for the request path '"/api/v1/auth/gesession"' (9406aaa8)
+2023-12-18T14:08:37.9478220+07:00 0HMVPGF2KED1Q:00000001 [DBG] Endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' with route pattern '"api/v{version:apiVersion}/Auth/GeSession"' is valid for the request path '"/api/v1/auth/gesession"' (430aaaf2)
+2023-12-18T14:08:37.9479120+07:00 0HMVPGF2KED1Q:00000001 [DBG] Request matched endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' (cbf60c4b)
+2023-12-18T14:08:37.9484760+07:00 0HMVPGF2KED1Q:00000001 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:08:37.9484910+07:00 0HMVPGF2KED1Q:00000001 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:08:37.9496640+07:00 0HMVPGF2KED1Q:00000001 [INF] Failed to validate the token. (616bef97)
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2023-12-18T14:08:37.9499210+07:00 0HMVPGF2KED1Q:00000001 [INF] "Bearer" was not authenticated. Failure message: "IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'." (48071232)
+2023-12-18T14:08:37.9504390+07:00 0HMVPGF2KED1Q:00000001 [DBG] Policy authentication schemes "" did not succeed (85bbf74d)
+2023-12-18T14:08:37.9507770+07:00 0HMVPGF2KED1Q:00000001 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user." (92d7f7d3)
+2023-12-18T14:08:37.9510590+07:00 0HMVPGF2KED1Q:00000001 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2023-12-18T14:08:37.9511380+07:00 0HMVPGF2KED1Q:00000001 [DBG] Connection id ""0HMVPGF2KED1Q"" completed keep alive response. (9784cde9)
+2023-12-18T14:08:37.9511920+07:00 0HMVPGF2KED1Q:00000001 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - 401 0 null 3.9582ms (74253ad3)
+2023-12-18T14:08:37.9876000+07:00 0HMVPGF2KED1Q:00000002 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - "application/json" null (d509f86a)
+2023-12-18T14:08:37.9876830+07:00 0HMVPGF2KED1Q:00000002 [DBG] 1 candidate(s) found for the request path '"/api/v1/auth/gesession"' (9406aaa8)
+2023-12-18T14:08:37.9877080+07:00 0HMVPGF2KED1Q:00000002 [DBG] Endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' with route pattern '"api/v{version:apiVersion}/Auth/GeSession"' is valid for the request path '"/api/v1/auth/gesession"' (430aaaf2)
+2023-12-18T14:08:37.9877240+07:00 0HMVPGF2KED1Q:00000002 [DBG] Request matched endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' (cbf60c4b)
+2023-12-18T14:08:37.9881550+07:00 0HMVPGF2KED1Q:00000002 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:08:37.9881640+07:00 0HMVPGF2KED1Q:00000002 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:08:37.9883000+07:00 0HMVPGF2KED1Q:00000002 [INF] Failed to validate the token. (616bef97)
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2023-12-18T14:08:37.9885100+07:00 0HMVPGF2KED1Q:00000002 [INF] "Bearer" was not authenticated. Failure message: "IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'." (48071232)
+2023-12-18T14:08:37.9886170+07:00 0HMVPGF2KED1Q:00000002 [DBG] Policy authentication schemes "" did not succeed (85bbf74d)
+2023-12-18T14:08:37.9886430+07:00 0HMVPGF2KED1Q:00000002 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user." (92d7f7d3)
+2023-12-18T14:08:37.9886790+07:00 0HMVPGF2KED1Q:00000002 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2023-12-18T14:08:37.9887070+07:00 0HMVPGF2KED1Q:00000002 [DBG] Connection id ""0HMVPGF2KED1Q"" completed keep alive response. (9784cde9)
+2023-12-18T14:08:37.9887260+07:00 0HMVPGF2KED1Q:00000002 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - 401 0 null 1.1339ms (74253ad3)
+2023-12-18T14:08:38.0048090+07:00 0HMVPGF2KED1Q:00000003 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - "application/json" null (d509f86a)
+2023-12-18T14:08:38.0048570+07:00 0HMVPGF2KED1Q:00000003 [DBG] 1 candidate(s) found for the request path '"/api/v1/auth/gesession"' (9406aaa8)
+2023-12-18T14:08:38.0048790+07:00 0HMVPGF2KED1Q:00000003 [DBG] Endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' with route pattern '"api/v{version:apiVersion}/Auth/GeSession"' is valid for the request path '"/api/v1/auth/gesession"' (430aaaf2)
+2023-12-18T14:08:38.0048970+07:00 0HMVPGF2KED1Q:00000003 [DBG] Request matched endpoint '"backend.Controllers.v1.AuthController.GeSession (backend)"' (cbf60c4b)
+2023-12-18T14:08:38.0051790+07:00 0HMVPGF2KED1Q:00000003 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:08:38.0051870+07:00 0HMVPGF2KED1Q:00000003 [DBG] Static files was skipped as the request already matched an endpoint. (6f513e9a)
+2023-12-18T14:08:38.0053520+07:00 0HMVPGF2KED1Q:00000003 [INF] Failed to validate the token. (616bef97)
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2023-12-18T14:08:38.0053640+07:00 0HMVPGF2KED1Q:00000003 [INF] "Bearer" was not authenticated. Failure message: "IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'." (48071232)
+2023-12-18T14:08:38.0054050+07:00 0HMVPGF2KED1Q:00000003 [DBG] Policy authentication schemes "" did not succeed (85bbf74d)
+2023-12-18T14:08:38.0054230+07:00 0HMVPGF2KED1Q:00000003 [INF] Authorization failed. "These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user." (92d7f7d3)
+2023-12-18T14:08:38.0054610+07:00 0HMVPGF2KED1Q:00000003 [INF] AuthenticationScheme: "Bearer" was challenged. (d45f1f38)
+2023-12-18T14:08:38.0054860+07:00 0HMVPGF2KED1Q:00000003 [DBG] Connection id ""0HMVPGF2KED1Q"" completed keep alive response. (9784cde9)
+2023-12-18T14:08:38.0054990+07:00 0HMVPGF2KED1Q:00000003 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:8081""""/api/v1/auth/gesession""" - 401 0 null 0.697ms (74253ad3)
+2023-12-18T14:08:42.9505580+07:00  [DBG] Connection id ""0HMVPGF2KED1Q"" received FIN. (acf58720)
+2023-12-18T14:08:42.9507650+07:00  [DBG] Connection id ""0HMVPGF2KED1Q"" disconnecting. (b29b9868)
+2023-12-18T14:08:42.9508000+07:00  [DBG] Connection id ""0HMVPGF2KED1Q"" sending FIN because: ""The Socket transport's send loop completed gracefully."" (59510695)
+2023-12-18T14:08:42.9517790+07:00  [DBG] Connection id ""0HMVPGF2KED1Q"" stopped. (056149f8)

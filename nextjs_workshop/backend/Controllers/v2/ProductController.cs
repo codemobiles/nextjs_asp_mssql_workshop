@@ -32,6 +32,7 @@ namespace backend.Controllers.v2
             _mapper = mapper;
         }
 
+        [AllowAnonymous]
         [HttpGet("")]
         public ActionResult<IEnumerable<Product>> GetProducts()
         {

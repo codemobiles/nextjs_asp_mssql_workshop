@@ -14,9 +14,10 @@ namespace backend.Installers
         {
             services.AddSwaggerGen(c =>
             {
+
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CodeMobiles .NETCore", Version = "1.0" });
-
-
+                c.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "CodeMobiles .NETCore", Version = "2.0" });
+            
 
                 // Set the comments path for the Swagger JSON and UI.
                 // must configure in .csproj file in part of <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -52,5 +53,8 @@ namespace backend.Installers
                   });
             });
         }
+
+
+
     }
 }
